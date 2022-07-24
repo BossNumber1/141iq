@@ -15,19 +15,43 @@
         <div class="titleBlock">Как достигаем</div>
         <div class="main__src-content">
           <div class="codeBlock">
-            <div class="codeBlock-title" @click="manageDisplayRequiredCode('0')">template</div>
+            <div class="codeBlock-title" @click="manageDisplayRequiredCode('0')">
+              <div>template</div>
+              <div v-if="!showFirstPartCode">
+                <img src="../public/pictures/icons/showCode.png" alt="icon code show" />
+              </div>
+              <div v-else>
+                <img src="../public/pictures/icons/hideCode.png" alt="icon code hide" />
+              </div>
+            </div>
             <div class="code">
               <img src="https://clck.ru/sNA3H" alt="a snapshot of the template" />
             </div>
           </div>
           <div class="codeBlock">
-            <div class="codeBlock-title" @click="manageDisplayRequiredCode('1')">script</div>
+            <div class="codeBlock-title" @click="manageDisplayRequiredCode('1')">
+              <div>script</div>
+              <div v-if="!showSecondPartCode">
+                <img src="../public/pictures/icons/showCode.png" alt="icon code show" />
+              </div>
+              <div v-else>
+                <img src="../public/pictures/icons/hideCode.png" alt="icon code hide" />
+              </div>
+            </div>
             <div class="code">
               <img src="https://clck.ru/sNA5M" alt="a snapshot of the script" />
             </div>
           </div>
           <div class="codeBlock">
-            <div class="codeBlock-title" @click="manageDisplayRequiredCode('2')">style scoped lang="scss"</div>
+            <div class="codeBlock-title" @click="manageDisplayRequiredCode('2')">
+              <div>style scoped lang="scss"</div>
+              <div v-if="!showThirdPartCode">
+                <img src="../public/pictures/icons/showCode.png" alt="icon code show" />
+              </div>
+              <div v-else>
+                <img src="../public/pictures/icons/hideCode.png" alt="icon code hide" />
+              </div>
+            </div>
             <div class="code">
               <img src="https://clck.ru/sNA6M" alt="a snapshot of the styles" />
             </div>
@@ -49,17 +73,54 @@ export default {
   },
   data() {
     return {
-      showCode: false,
+      showFirstPartCode: false,
+      showSecondPartCode: false,
+      showThirdPartCode: false,
     };
   },
   methods: {
     manageDisplayRequiredCode(numberBlock) {
-      if (this.showCode === false) {
-        this.showCode = true;
-        document.getElementsByClassName("code")[+numberBlock].style.display = "inherit";
-      } else {
-        this.showCode = false;
-        document.getElementsByClassName("code")[+numberBlock].style.display = "none";
+      const allCodeParts = document.getElementsByClassName("code");
+
+      if (numberBlock === "0") {
+        this.showFirstPartCode = !this.showFirstPartCode;
+        this.showSecondPartCode = false;
+        this.showThirdPartCode = false;
+
+        // показываем или убираем содержимое кликнутого блока
+        allCodeParts[0].style.display = this.showFirstPartCode ? "block" : "none";
+
+        // скрываем оставшиеся блоки
+        if (this.showFirstPartCode) {
+          allCodeParts[1].style.display = "none";
+          allCodeParts[2].style.display = "none";
+        }
+      } else if (numberBlock === "1") {
+        this.showFirstPartCode = false;
+        this.showSecondPartCode = !this.showSecondPartCode;
+        this.showThirdPartCode = false;
+
+        // показываем или убираем содержимое кликнутого блока
+        allCodeParts[1].style.display = this.showSecondPartCode ? "block" : "none";
+
+        // скрываем оставшиеся блоки
+        if (this.showSecondPartCode) {
+          allCodeParts[0].style.display = "none";
+          allCodeParts[2].style.display = "none";
+        }
+      } else if (numberBlock === "2") {
+        this.showFirstPartCode = false;
+        this.showSecondPartCode = false;
+        this.showThirdPartCode = !this.showThirdPartCode;
+
+        // показываем или убираем содержимое кликнутого блока
+        allCodeParts[2].style.display = this.showThirdPartCode ? "block" : "none";
+
+        // скрываем оставшиеся блоки
+        if (this.showThirdPartCode) {
+          allCodeParts[0].style.display = "none";
+          allCodeParts[1].style.display = "none";
+        }
       }
     },
   },
@@ -113,6 +174,9 @@ body {
           border-radius: 12px;
           margin-bottom: 10px;
           cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
         }
 
         .code {

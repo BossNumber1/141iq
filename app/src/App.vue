@@ -14,7 +14,24 @@
       <div class="main__src">
         <div class="titleBlock">Как достигаем</div>
         <div class="main__src-content">
-          <img src="https://clck.ru/sMkBL" alt="src guide" />
+          <div class="codeBlock">
+            <div class="codeBlock-title" @click="manageDisplayRequiredCode('0')">template</div>
+            <div class="code">
+              <img src="https://clck.ru/sNA3H" alt="a snapshot of the template" />
+            </div>
+          </div>
+          <div class="codeBlock">
+            <div class="codeBlock-title" @click="manageDisplayRequiredCode('1')">script</div>
+            <div class="code">
+              <img src="https://clck.ru/sNA5M" alt="a snapshot of the script" />
+            </div>
+          </div>
+          <div class="codeBlock">
+            <div class="codeBlock-title" @click="manageDisplayRequiredCode('2')">style scoped lang="scss"</div>
+            <div class="code">
+              <img src="https://clck.ru/sNA6M" alt="a snapshot of the styles" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -29,6 +46,22 @@ export default {
   name: "App",
   components: {
     FilterContacts,
+  },
+  data() {
+    return {
+      showCode: false,
+    };
+  },
+  methods: {
+    manageDisplayRequiredCode(numberBlock) {
+      if (this.showCode === false) {
+        this.showCode = true;
+        document.getElementsByClassName("code")[+numberBlock].style.display = "inherit";
+      } else {
+        this.showCode = false;
+        document.getElementsByClassName("code")[+numberBlock].style.display = "none";
+      }
+    },
   },
 };
 </script>
@@ -67,7 +100,26 @@ body {
   }
 
   &__src {
-    &-content {}
+    &-content {
+      .codeBlock {
+        &-title {
+          background-color: lightgray;
+          color: #d61a1a;
+          font-size: 20px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          border-radius: 12px;
+          margin-bottom: 10px;
+          cursor: pointer;
+        }
+
+        .code {
+          display: none;
+        }
+      }
+    }
   }
 }
 

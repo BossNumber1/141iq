@@ -53,7 +53,7 @@
               </div>
             </div>
             <div class="code">
-              <img src="https://clck.ru/sNA6M" alt="a snapshot of the styles" />
+              <img src="https://clck.ru/sP43f" alt="a snapshot of the styles" />
             </div>
           </div>
         </div>

@@ -1,21 +1,21 @@
 <template>
   <div class="container">
     <div class="header">
-      <div class="header__title">Фильтрация списка на Vue</div>
-      <div class="header__subtitle">Делаю сложное простым</div>
+      <div class="header__title display-1">Фильтрация списка на Vue</div>
+      <div class="header__subtitle lead">Делаю сложное простым</div>
     </div>
     <div class="main">
       <div class="main__demo">
-        <div class="titleBlock">Что получаем</div>
+        <div class="titleBlock display-6">Что получаем</div>
         <div class="main__demo-content">
           <FilterContacts />
         </div>
       </div>
       <div class="main__src">
-        <div class="titleBlock">Как достигаем</div>
+        <div class="titleBlock display-6">Как достигаем</div>
         <div class="main__src-content">
           <div class="codeBlock">
-            <div class="codeBlock-title" @click="manageDisplayRequiredCode('0')">
+            <div class="codeBlock-title badge text-bg-warning" @click="manageDisplayRequiredCode('0')">
               <div>template</div>
               <div v-if="!showFirstPartCode">
                 <img src="../public/pictures/icons/showCode.png" alt="icon code show" />
@@ -29,7 +29,7 @@
             </div>
           </div>
           <div class="codeBlock">
-            <div class="codeBlock-title" @click="manageDisplayRequiredCode('1')">
+            <div class="codeBlock-title badge text-bg-warning" @click="manageDisplayRequiredCode('1')">
               <div>script</div>
               <div v-if="!showSecondPartCode">
                 <img src="../public/pictures/icons/showCode.png" alt="icon code show" />
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="codeBlock">
-            <div class="codeBlock-title" @click="manageDisplayRequiredCode('2')">
+            <div class="codeBlock-title badge text-bg-warning" @click="manageDisplayRequiredCode('2')">
               <div>style scoped lang="scss"</div>
               <div v-if="!showThirdPartCode">
                 <img src="../public/pictures/icons/showCode.png" alt="icon code show" />
@@ -132,6 +132,7 @@ export default {
 
 body {
   font-family: "Roboto Slab", serif;
+  // color: #332525;
 }
 
 .header {
@@ -139,15 +140,15 @@ body {
   margin-bottom: 120px;
 
   &__title {
-    font-size: 28px;
-    font-weight: bold;
+    // font-size: 28px;
+    // font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
 
   &__subtitle {
-    color: gray;
-    font-size: 14px;
+    // color: gray;
+    // font-size: 14px;
     text-align: center;
   }
 }
@@ -165,11 +166,11 @@ body {
       .codeBlock {
         &-title {
           background-color: lightgray;
-          color: #d61a1a;
+          // color: #d61a1a;
+          color: #332525 !important;
           font-size: 20px;
+          font-weight: normal;
           height: 40px;
-          display: flex;
-          align-items: center;
           padding-left: 20px;
           border-radius: 12px;
           margin-bottom: 10px;
@@ -191,7 +192,7 @@ body {
 
 .titleBlock {
   text-align: center;
-  font-size: 20px;
+  // font-size: 20px;
   margin: 10px;
 }
 

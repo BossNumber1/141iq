@@ -147,6 +147,7 @@ export default {
     .main {
         .usersList {
             margin-bottom: 24px;
+            margin-left: 10px;
 
             .list {
                 .userInfo {

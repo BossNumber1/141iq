@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="main__src">
-        <div class="titleBlock display-6">Как достигаем</div>
+        <div class="titleBlock display-6 mb-5 mt-5">Как достигаем</div>
         <div class="main__src-content">
           <div class="codeBlock">
             <div class="codeBlock-title badge text-bg-warning" @click="manageDisplayRequiredCode('0')">
@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer mt-5"></div>
   </div>
 </template>
 

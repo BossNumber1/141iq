@@ -71,204 +71,204 @@ const db = [
     id: 1,
     src: `
       <div class="container">
-         <div class="header">
-            <div class="header__inputArea">
-               <div class="header__inputIcon">
-                  <img src="https://clck.ru/sMgeU" alt="search icon" />
-               </div>
-               <div class="header__inputContent">
-                  <input type="text" placeholder="Введите данные для поиска" @input="(event) => searchInList(event)" />
-               </div>
-            </div>
-         </div>
-         <div class="main">
-            <div class="usersList">
-               <div class="list" v-if="!emptyArrayUsers">
-                  <div class="userInfo" v-for="user in users" :key="user.id">
-                     <div class="userAvatar">
-                        <img :src="user.avatar" :alt="user.alt" />
-                     </div>
-                     <div class="userData">
-                        <div class="userName">
-                           {{ user.name }}
-                        </div>
-                        <div class="userResidence">
-                           {{ user.residence }}
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="main__warning" v-else>
-                  <div class="main__warning-icon">
-                     <img src="https://clck.ru/sMhds" alt="attention icon" />
-                  </div>
-                  <div class="main__warning-content">
-                     Такого пользователя нет в Базе Данных
-                  </div>
-               </div>
-            </div>
-         </div>
+      \u00a0\u00a0<div class="header">
+      \u00a0\u00a0\u00a0\u00a0<div class="header__inputArea">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="header__inputIcon">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<img src="https://clck.ru/sMgeU" alt="search icon" />
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="header__inputContent">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<input type="text" placeholder="Введите данные для поиска" @input="(event) => searchInList(event)" />
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0</div>
+      \u00a0\u00a0<div class="main">
+      \u00a0\u00a0\u00a0\u00a0<div class="usersList">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="list" v-if="!emptyArrayUsers">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="userInfo" v-for="user in users" :key="user.id">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="userAvatar">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<img :src="user.avatar" :alt="user.alt" />
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="userData">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="userName">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0{{ user.name }}
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="userResidence">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0{{ user.residence }}
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="main__warning" v-else>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="main__warning-icon">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<img src="https://clck.ru/sMhds" alt="attention icon" />
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<div class="main__warning-content">
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Такого пользователя нет в Базе Данных
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0\u00a0\u00a0</div>
+      \u00a0\u00a0</div>
       </div>`
   },
   {
     id: 2,
     src: `
       const sourceArrayUsers = [
-         {
-            id: 1,
-            avatar: "./pictures/avatars/Pheophan.png",
-            alt: "Pheophan avatar",
-            name: "Feofan",
-            residence: "Moscow",
-         },
-         {
-            id: 2,
-            avatar: "./pictures/avatars/Anna.png",
-            alt: "Anna avatar",
-            name: "Анна Краснова",
-            residence: "Saint-Petersburg",
-         },
-         {
-            id: 3,
-            avatar: "./pictures/avatars/Evgeny.png",
-            alt: "Evgeny avatar",
-            name: "Евгений Анисимов",
-            residence: "Veliky Novgorod",
-         },
+      \u00a0\u00a0{
+      \u00a0\u00a0\u00a0\u00a0id: 1,
+      \u00a0\u00a0\u00a0\u00a0avatar: "./pictures/avatars/Pheophan.png",
+      \u00a0\u00a0\u00a0\u00a0alt: "Pheophan avatar",
+      \u00a0\u00a0\u00a0\u00a0name: "Feofan",
+      \u00a0\u00a0\u00a0\u00a0residence: "Moscow",
+      \u00a0\u00a0},
+      \u00a0\u00a0{
+      \u00a0\u00a0\u00a0\u00a0id: 2,
+      \u00a0\u00a0\u00a0\u00a0avatar: "./pictures/avatars/Anna.png",
+      \u00a0\u00a0\u00a0\u00a0alt: "Anna avatar",
+      \u00a0\u00a0\u00a0\u00a0name: "Анна Краснова",
+      \u00a0\u00a0\u00a0\u00a0residence: "Saint-Petersburg",
+      \u00a0\u00a0},
+      \u00a0\u00a0{
+      \u00a0\u00a0\u00a0\u00a0id: 3,
+      \u00a0\u00a0\u00a0\u00a0avatar: "./pictures/avatars/Evgeny.png",
+      \u00a0\u00a0\u00a0\u00a0alt: "Evgeny avatar",
+      \u00a0\u00a0\u00a0\u00a0name: "Евгений Анисимов",
+      \u00a0\u00a0\u00a0\u00a0residence: "Veliky Novgorod",
+      \u00a0\u00a0},
       ];
 
       export default {
-         name: "FilterContacts",
-         data() {
-            return {
-               users: sourceArrayUsers,
-               emptyArrayUsers: false,
-               contentInput: "",
-            };
-         },
-         methods: {
-            searchInList(event) {
-               const search = require("search-in-list"); // включаем библиотеку поиска
+      \u00a0\u00a0name: "FilterContacts",
+      \u00a0\u00a0data() {
+      \u00a0\u00a0\u00a0\u00a0return {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0users: sourceArrayUsers,
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0emptyArrayUsers: false,
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0contentInput: "",
+      \u00a0\u00a0\u00a0\u00a0};
+      \u00a0\u00a0},
+      \u00a0\u00a0methods: {
+      \u00a0\u00a0\u00a0\u00a0searchInList(event) {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0const search = require("search-in-list"); // включаем библиотеку поиска
 
-               if (event.target.value === "") {
-                  // при очистке поля - возвращаем исходный список
-                  this.users = sourceArrayUsers;
-               } else if (event.target.value.length > this.contentInput.length) {
-                  this.users = search(this.users, event.target.value); // фильтруем исходный массив
-               } else if (event.target.value.length < this.contentInput.length) {
-                  this.emptyArrayUsers = false;
-                  this.users = search(sourceArrayUsers, event.target.value); // фильтруем исходный массив
-               } else {
-                  this.users = search(sourceArrayUsers, event.target.value); // фильтруем исходный массив
-               }
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0if (event.target.value === "") {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// при очистке поля - возвращаем исходный список
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = sourceArrayUsers;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0} else if (event.target.value.length > this.contentInput.length) {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(this.users, event.target.value); // фильтруем исходный массив
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0} else if (event.target.value.length < this.contentInput.length) {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.emptyArrayUsers = false;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(sourceArrayUsers, event.target.value); // фильтруем исходный массив
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0} else {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(sourceArrayUsers, event.target.value); // фильтруем исходный массив
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
 
-               this.contentInput = event.target.value; // сохраняем текущее содержимое
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.contentInput = event.target.value; // сохраняем текущее содержимое
 
-               if (this.users.length === 0) {
-                  // даём сигнал, что список доступных пользователей закончился
-                  this.emptyArrayUsers = true;
-               }
-            },
-         },
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0if (this.users.length === 0) {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// даём сигнал, что список доступных пользователей закончился
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.emptyArrayUsers = true;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0\u00a0\u00a0},
+      \u00a0\u00a0},
       };`
   },
   {
     id: 3,
     src: `
       .container {
-         padding: 0 20px;
+      \u00a0\u00a0padding: 0 20px;
 
-         .header {
-            padding: 6px 0;
+      \u00a0\u00a0.header {
+      \u00a0\u00a0\u00a0\u00a0padding: 6px 0;
 
-            &__inputArea {
-               border: 1px solid gray;
-               border-radius: 12px;
-               display: flex;
-               align-items: center;
-               padding: 0px;
-               width: 335px;
-               height: 56px;
-               align-self: stretch;
-               flex-grow: 0;
+      \u00a0\u00a0\u00a0\u00a0&__inputArea {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0border: 1px solid gray;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0border-radius: 12px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0display: flex;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0align-items: center;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0padding: 0px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0width: 335px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0height: 56px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0align-self: stretch;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0flex-grow: 0;
 
-               .header__inputContent {
-                  // border: 1px solid orange;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: flex-start;
-                  padding: 12px 12px 12px 0px;
-                  width: 283px;
-                  height: 42px;
-                  flex: none;
-                  order: 1;
-                  flex-grow: 1;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0.header__inputContent {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// border: 1px solid orange;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0display: flex;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0flex-direction: column;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0justify-content: center;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0align-items: flex-start;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0padding: 12px 12px 12px 0px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0width: 283px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0height: 42px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0flex: none;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0order: 1;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0flex-grow: 1;
 
-                  input {
-                     width: 95%;
-                     border: none;
-                     outline: none;
-                  }
-               }
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0input {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0width: 95%;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0border: none;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0outline: none;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
 
-               margin-bottom: 22px;
-            }
-         }
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0margin-bottom: 22px;
+      \u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0}
 
-         .main {
-            .usersList {
-               margin-bottom: 24px;
-               margin-left: 10px;
+      \u00a0\u00a0.main {
+      \u00a0\u00a0\u00a0\u00a0.usersList {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0margin-bottom: 24px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0margin-left: 10px;
 
-               .list {
-                  .userInfo {
-                     display: flex;
-                     align-items: center;
-                     margin: 5px 0;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0.list {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0.userInfo {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0display: flex;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0align-items: center;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0margin: 5px 0;
 
-                     .userAvatar {
-                        margin-right: 16px;
-                     }
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0.userAvatar {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0margin-right: 16px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
 
-                     .userData {
-                        .userName {
-                           width: 282px;
-                           height: 18px;
-                           font-family: "Roboto";
-                           font-style: normal;
-                           font-weight: 400;
-                           font-size: 14px;
-                           line-height: 18px;
-                           color: #263238;
-                        }
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0.userData {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0.userName {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0width: 282px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0height: 18px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0font-family: "Roboto";
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0font-style: normal;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0font-weight: 400;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0font-size: 14px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0line-height: 18px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0color: #263238;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
 
-                        .userResidence {
-                           width: 282px;
-                           height: 18px;
-                           font-family: "Roboto";
-                           font-style: normal;
-                           font-weight: 400;
-                           font-size: 14px;
-                           line-height: 18px;
-                           display: flex;
-                           align-items: center;
-                           color: #9E9E9E;
-                        }
-                     }
-                  }
-               }
-            }
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0.userResidence {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0width: 282px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0height: 18px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0font-family: "Roboto";
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0font-style: normal;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0font-weight: 400;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0font-size: 14px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0line-height: 18px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0display: flex;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0align-items: center;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0color: #9E9E9E;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0\u00a0\u00a0}
 
-            &__warning {
-               display: flex;
-               align-items: center;
+      \u00a0\u00a0\u00a0\u00a0&__warning {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0display: flex;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0align-items: center;
 
-               &-icon {
-                  margin-right: 10px;
-               }
-            }
-         }
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0&-icon {
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0margin-right: 10px;
+      \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0\u00a0\u00a0}
+      \u00a0\u00a0}
       }`
     },
 ]

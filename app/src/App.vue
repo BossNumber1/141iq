@@ -340,12 +340,25 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap");
 
 body {
   font-family: "Roboto Slab", serif;
   // color: #332525;
+
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
 }
 
 .header {
@@ -393,6 +406,8 @@ body {
           display: flex;
           align-items: center;
           justify-content: space-between;
+
+          font-family: monospace;
         }
 
         .code {

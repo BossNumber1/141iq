@@ -12,7 +12,8 @@
     "sass": "^1.54.0",
     "sass-loader": "^13.0.2",
     "search-in-list": "^1.0.1",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-disqus": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

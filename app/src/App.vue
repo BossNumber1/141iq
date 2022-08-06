@@ -76,6 +76,12 @@
           </div>
         </div>
       </div>
+      <div class="main__discussion">
+        <div class="titleBlock display-6 mb-5 mt-5">Есть вопросы? Помогу!</div>
+        <div class="main__discussion-content">
+          <Discussion />
+        </div>
+      </div>
     </div>
     <div class="footer mt-5"></div>
   </div>
@@ -83,6 +89,7 @@
 
 <script>
 import FilterContacts from "./components/FilterContacts";
+import Discussion from "./components/discussion-filter-contacts-page";
 
 const db = [
   {
@@ -295,6 +302,7 @@ export default {
   name: "App",
   components: {
     FilterContacts,
+    Discussion
   },
   data() {
     return {

@@ -30,7 +30,13 @@
                 <img src="../public/pictures/icons/hideCode.png" alt="icon code hide" />
               </div>
             </div>
-            <div class="code" id="templateSrc"></div>
+            <div class="code">
+              <div id="templateSrc"></div>
+              <div class="copyIcon" @click="copySrc(0)">
+                <img v-if="!copiedFirstSrc" src="../public/pictures/icons/copyIcon.png" alt="icon copy" />
+                <img v-else src="../public/pictures/icons/successIcon.svg" alt="icon success copied" />
+              </div>
+            </div>
           </div>
           <div class="codeBlock">
             <div class="codeBlock-title badge text-bg-warning" @click="manageDisplayRequiredCode('1')">
@@ -42,7 +48,13 @@
                 <img src="../public/pictures/icons/hideCode.png" alt="icon code hide" />
               </div>
             </div>
-            <div class="code" id="scriptSrc"></div>
+            <div class="code">
+              <div id="scriptSrc"></div>
+              <div class="copyIcon" @click="copySrc(1)">
+                <img v-if="!copiedSecondSrc" src="../public/pictures/icons/copyIcon.png" alt="icon copy" />
+                <img v-else src="../public/pictures/icons/successIcon.svg" alt="icon success copied" />
+              </div>
+            </div>
           </div>
           <div class="codeBlock">
             <div class="codeBlock-title badge text-bg-warning" @click="manageDisplayRequiredCode('2')">
@@ -54,7 +66,13 @@
                 <img src="../public/pictures/icons/hideCode.png" alt="icon code hide" />
               </div>
             </div>
-            <div class="code" id="stylesSrc"></div>
+            <div class="code">
+              <div id="stylesSrc"></div>
+              <div class="copyIcon" @click="copySrc(2)">
+                <img v-if="!copiedThirdSrc" src="../public/pictures/icons/copyIcon.png" alt="icon copy" />
+                <img v-else src="../public/pictures/icons/successIcon.svg" alt="icon success copied" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -283,7 +301,10 @@ export default {
       showFirstPartCode: false,
       showSecondPartCode: false,
       showThirdPartCode: false,
-      src: db
+      src: db,
+      copiedFirstSrc: false,
+      copiedSecondSrc: false,
+      copiedThirdSrc: false,
     };
   },
   methods: {
@@ -331,11 +352,35 @@ export default {
         }
       }
     },
+    copySrc(numberIcon) {
+      if (numberIcon === 0) {
+        this.copiedFirstSrc = true;
+      } else if (numberIcon === 1) {
+        this.copiedSecondSrc = true;
+      } else if (numberIcon === 2) {
+        this.copiedThirdSrc = true;
+      } 
+      
+      document.getElementsByClassName("copyIcon")[numberIcon].style.pointerEvents = "none";
+      document.getElementsByClassName("copyIcon")[numberIcon].style.opacity = "0.3";
+    }
   },
   mounted() {
     document.querySelector("#templateSrc").innerText = this.src[0].src;
     document.querySelector("#scriptSrc").innerText = this.src[1].src;
     document.querySelector("#stylesSrc").innerText = this.src[2].src;
+  },
+  updated() {
+    if (this.showFirstPartCode) {
+      document.getElementsByClassName("code")[0].style.display = "flex";
+      document.getElementsByClassName("code")[0].style.justifyContent = "space-between";
+    } else if (this.showSecondPartCode) {
+      document.getElementsByClassName("code")[1].style.display = "flex";
+      document.getElementsByClassName("code")[1].style.justifyContent = "space-between";
+    } else if (this.showThirdPartCode) {
+      document.getElementsByClassName("code")[2].style.display = "flex";
+      document.getElementsByClassName("code")[2].style.justifyContent = "space-between";
+    } 
   }
 };
 </script>
@@ -412,6 +457,27 @@ body {
 
         .code {
           display: none;
+
+          #templateSrc, #scriptSrc, #stylesSrc {
+            margin-left: 10px;
+            border: 1px solid;
+            border-radius: 12px;
+
+            padding-right: 81px;
+            padding-left: 57px;
+            
+            // width: max-content;
+          }
+
+          .copyIcon {
+            margin-top: 25px;
+            cursor: pointer;
+              
+            img {
+              width: 30px;
+              height: 30px;
+            }
+          }
         }
       }
     }

@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <div class="auth" v-if="!showDisqusBlock">
-      Войти через
-      <div @click="googleAuth" id="googleBtnAuth">
-        <img src="../../public/pictures/icons/googleAuth.svg" alt="google icon auth">
-      </div>
-      <div @click="vkAuth" id="vkBtnAuth">
-        <img src="../../public/pictures/icons/vkAuth.svg" alt="vk icon auth">
-      </div>
-      <div @click="fbAuth" id="fbBtnAuth">
-        <img src="../../public/pictures/icons/fbAuth.svg" alt="fb icon auth">
+      <div class="auth-btn">
+        <div @click="googleAuth" id="googleBtnAuth">
+          <img src="../../public/pictures/icons/googleAuth.svg" alt="google icon auth">
+        </div>
+        <div @click="vkAuth" id="vkBtnAuth">
+          <img src="../../public/pictures/icons/vkAuth.svg" alt="vk icon auth">
+        </div>
+        <div @click="fbAuth" id="fbBtnAuth">
+          <img src="../../public/pictures/icons/fbAuth.svg" alt="fb icon auth">
+        </div>
       </div>
     </div>
 
@@ -66,6 +67,11 @@ export default {
 .auth {
   margin: 32px;
   font-size: 18px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.auth-btn {
   display: flex;
   align-items: center;
 }

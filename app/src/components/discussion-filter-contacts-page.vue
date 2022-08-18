@@ -2,9 +2,15 @@
   <div id="app">
     <div class="auth" v-if="!showDisqusBlock">
       Войти через
-      <button @click="googleAuth" id="googleBtnAuth">Google</button>
-      <button @click="vkAuth" id="vkBtnAuth">Вконтакте</button>
-      <button @click="fbAuth" id="fbBtnAuth">Facebook</button>
+      <div @click="googleAuth" id="googleBtnAuth">
+        <img src="../../public/pictures/icons/googleAuth.svg" alt="google icon auth">
+      </div>
+      <div @click="vkAuth" id="vkBtnAuth">
+        <img src="../../public/pictures/icons/vkAuth.svg" alt="vk icon auth">
+      </div>
+      <div @click="fbAuth" id="fbBtnAuth">
+        <img src="../../public/pictures/icons/fbAuth.svg" alt="fb icon auth">
+      </div>
     </div>
 
     <disqus-block v-else />

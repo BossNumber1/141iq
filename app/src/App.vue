@@ -412,6 +412,8 @@ body {
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently not supported by any browser */
+
+  cursor: url('../public/pictures/cursors/default.png'), default;
 }
 
 .header {
@@ -436,7 +438,6 @@ body {
   &__demo {
     &-content {
       margin-top: 50px;
-      // border: 1px solid;
     }
   }
 
@@ -447,7 +448,6 @@ body {
 
         &-title {
           background-color: lightgray;
-          // color: #d61a1a;
           color: #332525 !important;
           font-size: 20px;
           font-weight: normal;
@@ -455,12 +455,16 @@ body {
           padding-left: 20px;
           border-radius: 12px;
           margin-bottom: 10px;
-          cursor: pointer;
+          cursor: url('../public/pictures/cursors/pointer.png'), pointer;
           display: flex;
           align-items: center;
           justify-content: space-between;
 
           font-family: monospace;
+
+          &:hover {
+            box-shadow: 0px 0px 0px 1px #ffc107, inset 0px 0px 0px 1px #ffc107, 0px 0px 10px 2px #ffc107,inset 0px 0px 10px 2px #ffc107;
+          }
         }
 
         .code {
@@ -470,16 +474,13 @@ body {
             margin-left: 10px;
             border: 1px solid;
             border-radius: 12px;
-
             padding-right: 81px;
             padding-left: 57px;
-            
-            // width: max-content;
           }
 
           .copyIcon {
             margin-top: 25px;
-            cursor: pointer;
+            cursor: url('../public/pictures/cursors/pointer.png'), pointer;
               
             img {
               width: 30px;

@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -74,12 +74,39 @@ export default {
 .auth-btn {
   display: flex;
   align-items: center;
+  /* animation: blink-animation 5s steps(5, start) infinite;
+  -webkit-animation: blink-animation 5s steps(15, start) infinite; */
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    /* visibility: hidden; */
+    content: "hi";
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    /* visibility: hidden; */
+  }
 }
 
 #googleBtnAuth,
 #vkBtnAuth,
 #fbBtnAuth {
-  cursor: pointer;
+  cursor: url('../../public/pictures/cursors/pointer.png'), pointer;
   margin-left: 10px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 </style>

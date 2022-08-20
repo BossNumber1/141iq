@@ -1,7 +1,7 @@
 <template>
   <div class="disqus">
     <div class="disqus_input">
-      <img src="https://clck.ru/sXUM8" alt="user ava" />
+      <img src="../../../public/pictures/icons/defaultAva.png" alt="user ava" />
       <div class="disqus_print-comment" v-if="!showTextarea">
         <input
           type="text"
@@ -11,16 +11,21 @@
           @click="inputClicked"
         />
       </div>
-      <div class="disqus_print-comment" v-else>
-        <textarea
-          ref="commentTextarea"
-          @input="(event) => printed(event.target.value)"
-        />
-        <div class="textarea-dop-block">
-          <div class="disqus_send-comment" @click="sendComment">
-            <button type="submit" class="btn btn-primary btn-sm">
-              Отправить
-            </button>
+      <div class="disqus_print-comment" v-if="showTextarea">
+        <div v-if="needLogin">
+          <DisqusAuth @login="login" />
+        </div>
+        <div v-if="!needLogin">
+          <textarea
+            ref="commentTextarea"
+            @input="(event) => printed(event.target.value)"
+          />
+          <div class="textarea-dop-block">
+            <div class="disqus_send-comment" @click="sendComment">
+              <button type="submit" class="btn btn-primary btn-sm">
+                Отправить
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -38,14 +43,20 @@
 </template>
 
 <script>
+import DisqusAuth from "./disqus-auth.vue";
+
 export default {
   name: "disqus-block",
+  components: {
+    DisqusAuth,
+  },
   data() {
     return {
       commentCurrent: "",
       commentList: [],
       showComment: false,
       showTextarea: false,
+      needLogin: true,
     };
   },
   methods: {
@@ -71,6 +82,9 @@ export default {
       // очищаем поле
       this.$refs.commentField.value = "";
     },
+    login(value) {
+      this.needLogin = value;
+    }
   },
   updated() {
     this.$refs.commentTextarea.focus();
@@ -85,7 +99,7 @@ export default {
   height: max-content;
   border-radius: 12px;
   overflow: hidden;
-  padding: 0 12px;
+  padding: 0 33px;
 
   .disqus_input {
     display: flex;
@@ -99,7 +113,7 @@ export default {
         border: none;
         padding-left: 12px;
         outline: none;
-        font-size: 26px;
+        font-size: 20px;
         font-weight: 300;
       }
 

@@ -22,14 +22,17 @@ export default {
     methods: {
         onSuccess(response) {
             // проходим через приложение
-            // const userId = response.Ca;
 
-            console.clear();
-            console.log("name: ", response.ov.yf);
-            console.log("ava: ", response.ov.DO);
+            // получаем имя и аватарку пользователя
+            const name = response.ov.yf;
+            const ava = response.ov.DO;
+
+            // сохраняем в store полученные данные
+            this.$store.commit('saveUserName', name);
+            this.$store.commit('saveUserAva', ava);
 
             // переходим в обсуждения
-            // this.$emit('login', false);
+            this.$emit('login', false);
         },
         onFailure(e) {
             console.log("failed: ", e);

@@ -1,7 +1,9 @@
 <template>
   <div class="disqus">
     <div class="disqus_input">
-      <img src="../../../public/pictures/icons/defaultAva.png" alt="user ava" />
+      <img src="../../../public/pictures/icons/defaultAva.png" alt="user ava" v-if="!userAva" />
+      <img :src="userAva" alt="user ava" v-else />
+      
       <div class="disqus_print-comment" v-if="!showTextarea">
         <input
           type="text"
@@ -57,6 +59,8 @@ export default {
       showComment: false,
       showTextarea: false,
       needLogin: true,
+      userAva: false,
+      userName: false
     };
   },
   methods: {
@@ -88,6 +92,10 @@ export default {
   },
   updated() {
     this.$refs.commentTextarea.focus();
+
+    // получаем имя и аватарку вошедшего пользователя
+    this.userAva = this.$store.getters.getUserAva;
+    this.userName = this.$store.getters.getUserName;
   },
 };
 </script>

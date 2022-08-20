@@ -6,7 +6,6 @@
 
 <script>
 import GoogleLogin from 'vue-google-login';
-let store = this.$store;
 
 export default {
     name: "ggl-icon-component",
@@ -29,8 +28,8 @@ export default {
             const ava = response.ov.DO;
 
             // сохраняем в store полученные данные
-            store.commit('saveUserName', name);
-            store.commit('saveUserAva', ava);
+            this.$store.commit('saveUserName', name);
+            this.$store.commit('saveUserAva', ava);
 
             // переходим в обсуждения
             this.$emit('login', false);

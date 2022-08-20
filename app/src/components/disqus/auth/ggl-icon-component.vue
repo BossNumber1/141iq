@@ -28,8 +28,8 @@ export default {
             const ava = response.ov.DO;
 
             // сохраняем в store полученные данные
-            this.$store.commit('saveUserName', name);
-            this.$store.commit('saveUserAva', ava);
+            this.$store.dispatch('saveUserName', name);
+            this.$store.dispatch('saveUserAva', ava);
 
             // переходим в обсуждения
             this.$emit('login', false);

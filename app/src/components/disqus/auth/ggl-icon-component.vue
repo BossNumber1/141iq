@@ -9,7 +9,7 @@ import GoogleLogin from 'vue-google-login';
 // import { useStore } from '../../../store/index';
 import { useStore } from 'vuex';
 
-const store = useStore();
+// const store = useStore();
 
 export default {
     name: "ggl-icon-component",
@@ -31,7 +31,7 @@ export default {
             const name = response.ov.yf;
             const ava = response.ov.DO;
 
-            // const store = useStore();
+            const store = useStore();
             // сохраняем в store полученные данные
             store.commit('saveUserName', name);
             store.commit('saveUserAva', ava);

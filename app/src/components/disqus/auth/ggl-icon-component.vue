@@ -25,7 +25,8 @@ export default {
             // const userId = response.Ca;
 
             console.clear();
-            console.log("response: ", response);
+            console.log("name: ", response.ov.yf);
+            console.log("ava: ", response.ov.DO);
 
             // переходим в обсуждения
             // this.$emit('login', false);

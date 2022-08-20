@@ -1,9 +1,7 @@
 <template>
   <div class="auth">
     <div class="auth-btn">
-      <div @click="googleAuth" id="googleBtnAuth">
-        <img src="../../../public/pictures/icons/googleAuth.svg" alt="google icon auth">
-      </div>
+      <GoogleAuth @login="login" />
       <div @click="vkAuth" id="vkBtnAuth">
         <img src="../../../public/pictures/icons/vkAuth.svg" alt="vk icon auth">
       </div>
@@ -15,15 +13,15 @@
 </template>
 
 <script>
+import GoogleAuth from './auth/ggl-icon-component.vue';
+
 export default {
   name: "disqus-auth",
+  components: { GoogleAuth },
+  props: {
+    login: Function
+  },
   methods: {
-    googleAuth() {
-      // проходим через приложение
-
-      // переходим в обсуждения
-      this.$emit('login', false)
-    },
     vkAuth() {
       // проходим через приложение
 
@@ -78,7 +76,6 @@ export default {
   }
 }
 
-#googleBtnAuth,
 #vkBtnAuth,
 #fbBtnAuth {
   cursor: url('../../../public/pictures/cursors/pointer.png'), pointer;

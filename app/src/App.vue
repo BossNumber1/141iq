@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="app">
     <div class="header">
       <div class="title display-1"><mark>141</mark>iq</div>
       <div class="header__subtitle lead text-muted">Делаю сложное простым</div>

@@ -6,9 +6,10 @@
 
 <script>
 import GoogleLogin from 'vue-google-login';
+import { useStore } from '../../../store/index';
 // import { useStore } from 'vuex'
 
-// const store = useStore()
+const store = useStore()
 
 export default {
     name: "ggl-icon-component",
@@ -32,8 +33,8 @@ export default {
 
             // const store = useStore();
             // сохраняем в store полученные данные
-            this.$store.commit('saveUserName', name);
-            this.$store.commit('saveUserAva', ava);
+            store.commit('saveUserName', name);
+            store.commit('saveUserAva', ava);
 
             // переходим в обсуждения
             this.$emit('login', false);

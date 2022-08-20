@@ -18,9 +18,6 @@ import GoogleAuth from './auth/ggl-icon-component.vue';
 export default {
   name: "disqus-auth",
   components: { GoogleAuth },
-  props: {
-    login: Function
-  },
   methods: {
     vkAuth() {
       // проходим через приложение

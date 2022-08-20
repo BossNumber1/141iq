@@ -6,10 +6,10 @@
 
 <script>
 import GoogleLogin from 'vue-google-login';
-import { useStore } from '../../../store/index';
-// import { useStore } from 'vuex'
+// import { useStore } from '../../../store/index';
+import { useStore } from 'vuex';
 
-const store = useStore()
+const store = useStore();
 
 export default {
     name: "ggl-icon-component",

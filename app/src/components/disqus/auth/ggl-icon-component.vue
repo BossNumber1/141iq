@@ -6,7 +6,7 @@
 
 <script>
 import GoogleLogin from 'vue-google-login';
-import { useStore } from 'vuex'
+// import { useStore } from 'vuex'
 
 // const store = useStore()
 
@@ -30,10 +30,10 @@ export default {
             const name = response.ov.yf;
             const ava = response.ov.DO;
 
-            const store = useStore();
+            // const store = useStore();
             // сохраняем в store полученные данные
-            store.commit('saveUserName', name);
-            store.commit('saveUserAva', ava);
+            this.$store.commit('saveUserName', name);
+            this.$store.commit('saveUserAva', ava);
 
             // переходим в обсуждения
             this.$emit('login', false);

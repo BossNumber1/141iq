@@ -3,7 +3,7 @@
     <div class="disqus_input">
       <img src="../../../public/pictures/icons/defaultAva.png" alt="user ava" v-if="!userAva" />
       <img :src="userAva" alt="user ava" v-else />
-      
+
       <div class="disqus_print-comment" v-if="!showTextarea">
         <input
           type="text"
@@ -94,8 +94,8 @@ export default {
     this.$refs.commentTextarea.focus();
 
     // получаем имя и аватарку вошедшего пользователя
-    this.userAva = this.$store.getters.getUserAva;
-    this.userName = this.$store.getters.getUserName;
+    this.userAva = localStorage.getItem("userAva");
+    this.userName = localStorage.getItem("userName");
   },
 };
 </script>

@@ -421,8 +421,6 @@ body {
   margin-bottom: 30px;
 
   &__subtitle {
-    // color: gray;
-    // font-size: 14px;
     text-align: center;
   }
 }
@@ -459,7 +457,6 @@ body {
           display: flex;
           align-items: center;
           justify-content: space-between;
-
           font-family: monospace;
 
           &:hover {
@@ -502,7 +499,6 @@ body {
 
 .titleBlock {
   text-align: center;
-  // font-size: 20px;
   margin: 10px;
 }
 

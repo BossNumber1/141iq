@@ -87,6 +87,7 @@ export default {
       this.$refs.commentField.value = "";
     },
     login(value) {
+      alert("login value: " + value);
       this.needLogin = value;
     }
   },

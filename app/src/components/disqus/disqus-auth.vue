@@ -19,6 +19,9 @@ export default {
   name: "disqus-auth",
   components: { GoogleAuth },
   methods: {
+    login(value) {
+      this.$emit("login", value);
+    },
     vkAuth() {
       // проходим через приложение
 

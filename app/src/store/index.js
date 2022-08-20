@@ -30,7 +30,7 @@
 //   }
 // })
 
-import { createApp } from 'vue'
+// import { createApp } from 'vue'
 import { createStore } from 'vuex'
 
 // Create a new store instance.
@@ -41,14 +41,14 @@ const store = createStore({
       userAva: ""
     }
   },
-  getters: {
-    getUserName(state) {
-      return state.userName
-    },
-    getUserAva(state) {
-      return state.userAva
-    }
-  },
+  // getters: {
+  //   getUserName(state) {
+  //     return state.userName
+  //   },
+  //   getUserAva(state) {
+  //     return state.userAva
+  //   }
+  // },
   mutations: {
     saveUserName(state, name) {
       state.userName = name
@@ -60,7 +60,9 @@ const store = createStore({
 
 })
 
-const app = createApp({ /* your root component */ })
+// const app = createApp({<App /> })
 
 // Install the store instance as a plugin
-app.use(store)
+// app.use(store)
+
+export default store

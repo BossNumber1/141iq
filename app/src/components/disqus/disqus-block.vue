@@ -67,7 +67,6 @@ export default {
   methods: {
     inputClicked() {
       // показываем поле ввода
-      this.textareaCreated = true;
       this.showTextarea = true;
     },
     printed(val) {
@@ -90,6 +89,9 @@ export default {
       this.commentCurrent = "";
       // очищаем поле
       this.$refs.commentField.value = "";
+
+      // убираем курсор
+      this.textareaCreated = true;
     },
     login(value) {
       this.needLogin = value;

@@ -61,13 +61,15 @@ export default {
       needLogin: true,
       userAva: false,
       userName: false,
-      textareaCreated: false,
+      textareaCreated: true,
     };
   },
   methods: {
     inputClicked() {
       // показываем поле ввода
       this.showTextarea = true;
+
+      this.textareaCreated = false;
     },
     printed(val) {
       this.commentCurrent = val;

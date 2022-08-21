@@ -99,6 +99,9 @@ export default {
       this.needLogin = value;
     }
   },
+  mounted() {
+    localStorage.getItem("userAva") ? this.needLogin = false : this.needLogin = true;
+  },
   updated() {
     if (this.$refs.commentTextarea && this.textareaCreated === false) {
       // ставим курсор в поле ввода, как только оно появилось

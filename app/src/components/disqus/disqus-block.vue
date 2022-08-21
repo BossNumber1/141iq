@@ -36,7 +36,7 @@
       <div class="comment" v-for="comment in commentList" :key="comment.id">
         <img :src="comment.ava" alt="avatar user" />
         <div class="comment__content">
-          <div class="comment__author-name">mike</div>
+          <div class="comment__author-name">{{comment.name}}</div>
           <div class="comment__text">{{ comment.text }}</div>
         </div>
       </div>
@@ -76,7 +76,8 @@ export default {
       // сохраняем новый коммент
       this.commentList.push({
         id: idCommentNew,
-        ava: "https://clck.ru/sXUM8",
+        ava: this.userAva,
+        name: this.userName,
         text: this.commentCurrent,
       });
       // включаем показ комментов
@@ -87,7 +88,6 @@ export default {
       this.$refs.commentField.value = "";
     },
     login(value) {
-      alert("login value: " + value);
       this.needLogin = value;
     }
   },

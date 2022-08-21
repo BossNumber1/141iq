@@ -101,11 +101,15 @@ export default {
     if (this.$refs.commentTextarea && !this.textareaCreated) {
       // ставим курсор в поле ввода, как только оно появилось
       this.$refs.commentTextarea.focus();
+
+      alert("jj")
     }
 
     if (this.$refs.commentTextarea.value.length > 0) {
       // очищаем поле ввода, если оно заполнено
       this.$refs.commentTextarea.value = "";
+
+      // blur()
     }
 
     // получаем имя и аватарку вошедшего пользователя

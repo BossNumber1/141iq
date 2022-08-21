@@ -104,7 +104,7 @@ export default {
       // ставим курсор в поле ввода, как только оно появилось
       this.$refs.commentTextarea.focus();
 
-      console.clear();
+      // console.clear();
       console.log("this.$refs.commentTextarea", this.$refs.commentTextarea);
       console.log("this.textareaCreated", this.textareaCreated);
     }

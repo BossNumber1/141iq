@@ -101,6 +101,7 @@ export default {
   },
   mounted() {
     localStorage.getItem("userAva") ? this.needLogin = false : this.needLogin = true;
+    localStorage.getItem("userAva") ? this.userAva = localStorage.getItem("userAva") : this.userAva = false;
   },
   updated() {
     if (this.$refs.commentTextarea && this.textareaCreated === false) {

@@ -105,7 +105,7 @@ export default {
       this.$refs.commentTextarea.focus();
     }
 
-    if (this.$refs.commentTextarea.value && this.$refs.commentTextarea.value.length > 0) {
+    if (this.$refs.commentTextarea && this.$refs.commentTextarea.value.length > 0) {
       // очищаем поле ввода, если оно заполнено
       this.$refs.commentTextarea.value = "";
     }

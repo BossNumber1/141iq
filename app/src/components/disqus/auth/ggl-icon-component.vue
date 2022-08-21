@@ -23,13 +23,9 @@ export default {
         onSuccess(response) {
             // проходим через приложение
 
-            // получаем имя и аватарку пользователя
-            const name = response.ov.yf;
-            const ava = response.ov.DO;
-
-            // сохраняем полученные данные
-            localStorage.setItem("userName", name);
-            localStorage.setItem("userAva", ava);
+            // получаем и сохраняем имя и аватарку пользователя
+            localStorage.setItem("userName", response.ov.yf);
+            localStorage.setItem("userAva", response.ov.DO);
 
             // переходим в обсуждения
             this.$emit('login', false);
@@ -53,6 +49,8 @@ export default {
     #googleBtnAuth {
         cursor: url('../../../../public/pictures/cursors/pointer.png'), pointer;
         margin-left: 10px;
+        border: none;
+        background-color: white;
 
         &:hover {
             transform: scale(1.4);

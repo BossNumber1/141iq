@@ -93,6 +93,7 @@ export default {
   },
   updated() {
     this.$refs.commentTextarea.focus();
+    this.$refs.commentTextarea.value = "";
 
     // получаем имя и аватарку вошедшего пользователя
     this.userAva = localStorage.getItem("userAva");

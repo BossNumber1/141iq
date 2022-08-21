@@ -98,11 +98,13 @@ export default {
     }
   },
   updated() {
-    if (this.$refs.commentTextarea && !this.textareaCreated) {
+    if (this.$refs.commentTextarea && this.textareaCreated === false) {
       // ставим курсор в поле ввода, как только оно появилось
       this.$refs.commentTextarea.focus();
 
-      alert("jj")
+      console.clear();
+      console.log("this.$refs.commentTextarea", this.$refs.commentTextarea);
+      console.log("this.textareaCreated", this.textareaCreated);
     }
 
     if (this.$refs.commentTextarea.value.length > 0) {

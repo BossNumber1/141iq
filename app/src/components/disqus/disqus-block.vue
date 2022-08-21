@@ -103,17 +103,11 @@ export default {
     if (this.$refs.commentTextarea && this.textareaCreated === false) {
       // ставим курсор в поле ввода, как только оно появилось
       this.$refs.commentTextarea.focus();
-
-      // console.clear();
-      console.log("this.$refs.commentTextarea", this.$refs.commentTextarea);
-      console.log("this.textareaCreated", this.textareaCreated);
     }
 
-    if (this.$refs.commentTextarea.value.length > 0) {
+    if (this.$refs.commentTextarea.value && this.$refs.commentTextarea.value.length > 0) {
       // очищаем поле ввода, если оно заполнено
       this.$refs.commentTextarea.value = "";
-
-      // blur()
     }
 
     // получаем имя и аватарку вошедшего пользователя

@@ -92,8 +92,15 @@ export default {
     }
   },
   updated() {
-    this.$refs.commentTextarea.focus();
-    this.$refs.commentTextarea.value = "";
+    if (this.$refs.commentTextarea) {
+      // ставим курсор в поле ввода, как только оно появилось
+      this.$refs.commentTextarea.focus();
+    }
+
+    if (this.$refs.commentTextarea.value.length > 0) {
+      // очищаем поле ввода, если оно заполнено
+      this.$refs.commentTextarea.value = "";
+    }
 
     // получаем имя и аватарку вошедшего пользователя
     this.userAva = localStorage.getItem("userAva");

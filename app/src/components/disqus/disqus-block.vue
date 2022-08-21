@@ -60,11 +60,14 @@ export default {
       showTextarea: false,
       needLogin: true,
       userAva: false,
-      userName: false
+      userName: false,
+      textareaCreated: false,
     };
   },
   methods: {
     inputClicked() {
+      // показываем поле ввода
+      this.textareaCreated = true;
       this.showTextarea = true;
     },
     printed(val) {
@@ -80,6 +83,7 @@ export default {
         name: this.userName,
         text: this.commentCurrent,
       });
+
       // включаем показ комментов
       this.showComment = true;
       // очищаем данные поля
@@ -92,7 +96,7 @@ export default {
     }
   },
   updated() {
-    if (this.$refs.commentTextarea) {
+    if (this.$refs.commentTextarea && !this.textareaCreated) {
       // ставим курсор в поле ввода, как только оно появилось
       this.$refs.commentTextarea.focus();
     }

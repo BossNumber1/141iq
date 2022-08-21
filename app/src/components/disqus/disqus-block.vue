@@ -61,15 +61,13 @@ export default {
       needLogin: true,
       userAva: false,
       userName: false,
-      textareaCreated: true,
+      textareaCreated: false,
     };
   },
   methods: {
     inputClicked() {
       // показываем поле ввода
       this.showTextarea = true;
-
-      this.textareaCreated = false;
     },
     printed(val) {
       this.commentCurrent = val;
@@ -90,7 +88,9 @@ export default {
       // очищаем данные поля
       this.commentCurrent = "";
       // очищаем поле
-      this.$refs.commentField.value = "";
+      if (this.$refs.commentField) {
+        this.$refs.commentField.value = "";
+      }
 
       // убираем курсор
       this.textareaCreated = true;

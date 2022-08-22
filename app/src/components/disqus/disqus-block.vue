@@ -84,7 +84,7 @@ export default {
 
       // создаём новый коммент
       let newComment = {
-        id: idCommentNew,
+        id_comment: idCommentNew,
         ava: userAva,
         name: userName,
         text: commentText,

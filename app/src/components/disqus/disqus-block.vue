@@ -151,8 +151,7 @@ export default {
         // if (this.commentList.length > 0) {
         //   this.showComment = true;
         // }
-        this.commentList.push(...response.data);
-        // response
+        console.log(response);      this.commentList.push(...response.data);
       } catch (e) {
         console.error("Error text:", e);
       }

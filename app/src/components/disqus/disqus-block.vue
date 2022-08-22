@@ -162,6 +162,7 @@ export default {
     });
   },
   updated() {
+    console.log("commentList:", this.commentList)
     if (this.$refs.commentTextarea && this.textareaCreated === false) {
       // ставим курсор в поле ввода, как только оно появилось
       this.$refs.commentTextarea.focus();

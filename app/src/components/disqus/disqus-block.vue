@@ -140,11 +140,18 @@ export default {
     // получаем все ранее созданные комментарии
     (async function () {
       const axios = require('axios').default;
+      let status;
 
       await axios.get(
         'https://iq141.herokuapp.com/getAllComments'
       ).then(response => {
-        return response;
+        try {
+          status = response;
+        } catch (e) {
+          console.error("Error text:", e);
+        }
+        
+        return status;
       })
     })().then((res) => {
       try {

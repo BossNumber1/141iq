@@ -75,13 +75,49 @@ export default {
     sendComment() {
       // создаём id нового коммента
       const idCommentNew = this.commentList.length + 1;
-      // сохраняем новый коммент
-      this.commentList.push({
+      // создаём новый коммент
+      let newComment = {
         id: idCommentNew,
         ava: this.userAva,
         name: this.userName,
         text: this.commentCurrent,
-      });
+      }
+
+      // сохраняем коммент
+      this.commentList.push(newComment);
+
+      // и на сервер тоже
+      (async function () {
+        // отправляем данные авторизации для аутентификации на сервере
+        const axios = require('axios').default;
+        // let status;
+
+        await axios.post(
+          {
+            url: 'https://iq141.herokuapp.com/saveComment',
+            data: {
+              "name": "mike3",
+              "avatar": "ava3",
+              "text": "hello3"
+            }
+          }
+        ).then(
+            response => {
+                try {
+                  console.log("response: ", response);
+                    // if (response.data.operationResult === "OK") {
+                    //     status = response.data;
+                    // } else {
+                    //     alert("Ошибка сохранения коммента");
+                    // }
+                } catch (e) {
+                    console.error("Error text:", e);
+                }
+            }
+        )
+
+        // return status;
+      })();
 
       // включаем показ комментов
       this.showComment = true;

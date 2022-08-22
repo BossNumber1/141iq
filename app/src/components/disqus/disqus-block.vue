@@ -75,12 +75,17 @@ export default {
     sendComment() {
       // создаём id нового коммента
       const idCommentNew = this.commentList.length + 1;
+      // получаем данные для коммента
+      const userAva = this.userAva;
+      const userName = this.userName;
+      const commentText = this.commentCurrent;
+
       // создаём новый коммент
       let newComment = {
         id: idCommentNew,
-        ava: this.userAva,
-        name: this.userName,
-        text: this.commentCurrent,
+        ava: userAva,
+        name: userName,
+        text: commentText,
       }
 
       // сохраняем коммент
@@ -94,9 +99,9 @@ export default {
         await axios.post(
           'https://iq141.herokuapp.com/saveComment',
           {
-            name: this.userName,
-            avatar: this.userAva,
-            text: this.commentCurrent
+            name: userName,
+            avatar: userAva,
+            text: commentText
           }
         ).then(
             response => {

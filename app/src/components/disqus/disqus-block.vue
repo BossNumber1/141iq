@@ -46,6 +46,7 @@
 
 <script>
 import DisqusAuth from "./disqus-auth.vue";
+import { log, error } from "console";
 
 export default {
   name: "disqus-block",
@@ -75,6 +76,7 @@ export default {
     sendComment() {
       // создаём id нового коммента
       const idCommentNew = this.commentList.length + 1;
+
       // получаем данные для коммента
       const userAva = this.userAva;
       const userName = this.userName;
@@ -107,10 +109,10 @@ export default {
             response => {
                 try {
                   if (response.statusText !== "OK") {
-                    console.log("Ошибка сохранения коммента");
+                    log("Ошибка сохранения коммента");
                   } 
                 } catch (e) {
-                    console.error("Error text:", e);
+                    error("Error text:", e);
                 }
             }
         )
@@ -135,6 +137,18 @@ export default {
   mounted() {
     localStorage.getItem("userAva") ? this.needLogin = false : this.needLogin = true;
     localStorage.getItem("userAva") ? this.userAva = localStorage.getItem("userAva") : this.userAva = false;
+
+    // получаем все ранее созданные комментарии
+    (async function () {
+      const axios = require('axios').default;
+
+      await axios.get(
+        'https://iq141.herokuapp.com/getAllComments'
+      ).then(response => {
+        log(response.data);
+        this.commentList = response.data;
+      })
+    })();
   },
   updated() {
     if (this.$refs.commentTextarea && this.textareaCreated === false) {

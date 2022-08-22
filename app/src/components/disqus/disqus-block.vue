@@ -144,14 +144,16 @@ export default {
       await axios.get(
         'https://iq141.herokuapp.com/getAllComments'
       ).then(response => {
-        console.log(response); 
-        return response
+        return response;
       })
     })().then((response) => {
       try {
-        // if (this.commentList.length > 0) {
-        //   this.showComment = true;
-        // }
+        if (response.status === 200) {
+          console.log("data:", response.data);      
+          this.commentList.push(...response.data);
+        } else {
+          console.log("Ошибка получения комментов");
+        }
         console.log(response);      this.commentList.push(...response.data);
       } catch (e) {
         console.error("Error text:", e);

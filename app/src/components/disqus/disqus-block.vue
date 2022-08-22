@@ -45,7 +45,6 @@
 </template>
 
 <script>
-import { log, error } from "console";
 import DisqusAuth from "./disqus-auth.vue";
 
 export default {
@@ -109,10 +108,10 @@ export default {
             response => {
                 try {
                   if (response.statusText !== "OK") {
-                    log("Ошибка сохранения коммента");
+                    console.log("Ошибка сохранения коммента");
                   } 
                 } catch (e) {
-                    error("Error text:", e);
+                    console.error("Error text:", e);
                 }
             }
         )
@@ -145,7 +144,7 @@ export default {
       await axios.get(
         'https://iq141.herokuapp.com/getAllComments'
       ).then(response => {
-        log(response.data);
+        console.log(response.data);
         this.commentList = response.data;
       })
     })();

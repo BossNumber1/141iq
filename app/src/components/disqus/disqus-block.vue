@@ -179,6 +179,9 @@ export default {
     // получаем имя и аватарку вошедшего пользователя
     this.userAva = localStorage.getItem("userAva");
     this.userName = localStorage.getItem("userName");
+
+    // включаем показ комментов
+      this.showComment = true;
   },
 };
 </script>

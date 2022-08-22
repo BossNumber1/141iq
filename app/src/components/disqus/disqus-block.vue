@@ -152,7 +152,7 @@ export default {
           console.error("Error text:", e);
         }
 
-        // return status;
+        return status;
       })
     })().then((res) => {
       try {

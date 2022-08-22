@@ -146,15 +146,14 @@ export default {
       ).then(response => {
         return response;
       })
-    })().then((response) => {
+    })().then((res) => {
       try {
-        if (response.status === 200) {
-          console.log("data:", response.data);      
-          this.commentList.push(...response.data);
+        if (res.status === 200) {
+          console.log("data:", res.data);      
+          this.commentList.push(...res.data);
         } else {
           console.log("Ошибка получения комментов");
         }
-        console.log(response);      this.commentList.push(...response.data);
       } catch (e) {
         console.error("Error text:", e);
       }

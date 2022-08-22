@@ -155,14 +155,17 @@ export default {
       })
     })().then(() => {
       try {
-        this.commentList.push(...allComments.data);
+        for (let i = 0; i < allComments.data.length; i++) {
+          this.commentList.push(allComments.data[i]);
+        }
       } catch (e) {
         console.error("Error text:", e);
       }
     });
   },
   updated() {
-    console.log("commentList:", this.commentList)
+    console.log("commentList:", this.commentList);
+
     if (this.$refs.commentTextarea && this.textareaCreated === false) {
       // ставим курсор в поле ввода, как только оно появилось
       this.$refs.commentTextarea.focus();

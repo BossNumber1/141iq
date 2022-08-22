@@ -33,8 +33,8 @@
       </div>
     </div>
     <div class="disqus_list" v-if="showComment">
-      <div class="comment" v-for="comment in commentList" :key="comment.id">
-        <img :src="comment.ava" alt="avatar user" />
+      <div class="comment" v-for="comment in commentList" :key="comment.id_comment">
+        <img :src="comment.avatar" alt="avatar user" />
         <div class="comment__content">
           <div class="comment__author-name">{{comment.name}}</div>
           <div class="comment__text">{{ comment.text }}</div>

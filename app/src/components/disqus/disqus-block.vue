@@ -154,7 +154,7 @@ export default {
 
         return status;
       })
-    })().then((res) => {
+    })().then(() => {
       try {
         // if (status.status === 200) {
           console.log("data2:", status.data);      

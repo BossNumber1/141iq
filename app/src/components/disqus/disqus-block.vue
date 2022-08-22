@@ -144,8 +144,8 @@ export default {
       await axios.get(
         'https://iq141.herokuapp.com/getAllComments'
       ).then(response => {
-        console.log(response.data);
-        this.commentList = response.data;
+        console.log("response2: ", response.data);
+        this.commentList.push(response.data);
       })
     })();
   },

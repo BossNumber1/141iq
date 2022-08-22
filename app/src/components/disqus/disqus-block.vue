@@ -46,7 +46,7 @@
 
 <script>
 import DisqusAuth from "./disqus-auth.vue";
-let status;
+let allComments;
 
 export default {
   name: "disqus-block",
@@ -146,22 +146,16 @@ export default {
         'https://iq141.herokuapp.com/getAllComments'
       ).then(response => {
         try {
-          status = response;
-          // console.log("stat: ", status);
+          allComments = response;
         } catch (e) {
           console.error("Error text:", e);
         }
 
-        return status;
+        return allComments;
       })
     })().then(() => {
       try {
-        // if (status.status === 200) {
-          console.log("data2:", status.data);      
-          // this.commentList.push(...status.data);
-        // } else {
-        //   console.log("Ошибка получения комментов");
-        // }
+        this.commentList.push(...allComments.data);
       } catch (e) {
         console.error("Error text:", e);
       }

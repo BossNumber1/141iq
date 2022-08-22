@@ -144,10 +144,19 @@ export default {
       await axios.get(
         'https://iq141.herokuapp.com/getAllComments'
       ).then(response => {
-        console.log("response2: ", response.data);
-        this.commentList.push(response.data);
+        return response
       })
-    })();
+    })().then((response) => {
+      try {
+        // if (this.commentList.length > 0) {
+        //   this.showComment = true;
+        // }
+        this.commentList.push(...response.data);
+        // response
+      } catch (e) {
+        console.error("Error text:", e);
+      }
+    });
   },
   updated() {
     if (this.$refs.commentTextarea && this.textareaCreated === false) {

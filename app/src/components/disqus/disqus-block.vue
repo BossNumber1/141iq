@@ -156,12 +156,12 @@ export default {
       })
     })().then((res) => {
       try {
-        if (status.status === 200) {
+        // if (status.status === 200) {
           console.log("data2:", status.data);      
-          this.commentList.push(...status.data);
-        } else {
-          console.log("Ошибка получения комментов");
-        }
+          // this.commentList.push(...status.data);
+        // } else {
+        //   console.log("Ошибка получения комментов");
+        // }
       } catch (e) {
         console.error("Error text:", e);
       }

@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import DisqusAuth from "./disqus-auth.vue";
 import { log, error } from "console";
+import DisqusAuth from "./disqus-auth.vue";
 
 export default {
   name: "disqus-block",

@@ -93,13 +93,11 @@ export default {
         // let status;
 
         await axios.post(
+          'https://iq141.herokuapp.com/saveComment',
           {
-            url: 'https://iq141.herokuapp.com/saveComment',
-            data: {
-              "name": "mike3",
-              "avatar": "ava3",
-              "text": "hello3"
-            }
+            name: "mike3",
+            avatar: "ava3",
+            text: "hello3"
           }
         ).then(
             response => {

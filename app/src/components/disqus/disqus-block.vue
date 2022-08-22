@@ -157,9 +157,9 @@ export default {
     })().then((res) => {
       console.log("status2: ", status);
       try {
-        if (res.status === 200) {
-          console.log("data:", res.data);      
-          this.commentList.push(...res.data);
+        if (status.status === 200) {
+          console.log("data2:", status.data);      
+          this.commentList.push(...status.data);
         } else {
           console.log("Ошибка получения комментов");
         }

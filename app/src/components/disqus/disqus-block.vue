@@ -90,31 +90,25 @@ export default {
       (async function () {
         // отправляем данные авторизации для аутентификации на сервере
         const axios = require('axios').default;
-        // let status;
 
         await axios.post(
           'https://iq141.herokuapp.com/saveComment',
           {
-            name: "mike3",
-            avatar: "ava3",
-            text: "hello3"
+            name: this.userName,
+            avatar: this.userAva,
+            text: this.commentCurrent
           }
         ).then(
             response => {
                 try {
-                  console.log("response: ", response);
-                    // if (response.data.operationResult === "OK") {
-                    //     status = response.data;
-                    // } else {
-                    //     alert("Ошибка сохранения коммента");
-                    // }
+                  if (response.statusText !== "OK") {
+                    console.log("Ошибка сохранения коммента");
+                  } 
                 } catch (e) {
                     console.error("Error text:", e);
                 }
             }
         )
-
-        // return status;
       })();
 
       // включаем показ комментов

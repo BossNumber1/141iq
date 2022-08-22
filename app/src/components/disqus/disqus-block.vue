@@ -147,10 +147,11 @@ export default {
       ).then(response => {
         try {
           status = response;
+          console.log("stat: ", status);
         } catch (e) {
           console.error("Error text:", e);
         }
-        
+
         return status;
       })
     })().then((res) => {

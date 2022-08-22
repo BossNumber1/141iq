@@ -46,6 +46,7 @@
 
 <script>
 import DisqusAuth from "./disqus-auth.vue";
+let status;
 
 export default {
   name: "disqus-block",
@@ -138,16 +139,15 @@ export default {
     localStorage.getItem("userAva") ? this.userAva = localStorage.getItem("userAva") : this.userAva = false;
 
     // получаем все ранее созданные комментарии
-    (async function () {
+    (async function() {
       const axios = require('axios').default;
-      let status;
-
+      
       await axios.get(
         'https://iq141.herokuapp.com/getAllComments'
       ).then(response => {
         try {
           status = response;
-          console.log("stat: ", status);
+          // console.log("stat: ", status);
         } catch (e) {
           console.error("Error text:", e);
         }
@@ -155,7 +155,7 @@ export default {
         return status;
       })
     })().then((res) => {
-      console.log("res: ", res);
+      console.log("status2: ", status);
       try {
         if (res.status === 200) {
           console.log("data:", res.data);      

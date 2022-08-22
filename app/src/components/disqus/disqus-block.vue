@@ -155,6 +155,7 @@ export default {
         return status;
       })
     })().then((res) => {
+      console.log("res: ", res);
       try {
         if (res.status === 200) {
           console.log("data:", res.data);      

@@ -83,6 +83,7 @@
         </div>
       </div>
     </div>
+    <AdminCard v-if="showCardAdmin" :showCardAdmin="showCardAdmin" />
     <div class="footer">
       <div>
         <img src="../public/pictures/dogfriend.png" alt="dog image" />
@@ -92,7 +93,7 @@
         <div class="footer-original-quote">Imperitia pro culpa habetur</div>
       </div>
       <div>
-        <div class="footer__creator">
+        <div class="footer__creator" @click="showAdminCardBio">
           <img src="../public/pictures/creator.png" alt="creator" /> Дмитрий Устинов
         </div>
         <div class="footer__contacts">
@@ -110,6 +111,7 @@
 <script>
 import FilterContacts from "./components/FilterContacts";
 import DisqusBlock from "./components/disqus/disqus-block";
+import AdminCard from "./components/AdminCard.vue"
 
 const db = [
   {
@@ -322,7 +324,8 @@ export default {
   name: "App",
   components: {
     FilterContacts,
-    DisqusBlock
+    DisqusBlock,
+    AdminCard
   },
   data() {
     return {
@@ -333,6 +336,7 @@ export default {
       copiedFirstSrc: false,
       copiedSecondSrc: false,
       copiedThirdSrc: false,
+      showCardAdmin: false
     };
   },
   methods: {
@@ -391,12 +395,22 @@ export default {
       
       document.getElementsByClassName("copyIcon")[numberIcon].style.pointerEvents = "none";
       document.getElementsByClassName("copyIcon")[numberIcon].style.opacity = "0.3";
+    },
+    showAdminCardBio() {
+      this.showCardAdmin = true;
     }
   },
   mounted() {
     document.querySelector("#templateSrc").innerText = this.src[0].src;
     document.querySelector("#scriptSrc").innerText = this.src[1].src;
     document.querySelector("#stylesSrc").innerText = this.src[2].src;
+
+    let recaptchaScript = document.createElement('script');
+    recaptchaScript.setAttribute('type', 'text/javascript');
+    recaptchaScript.setAttribute('src', "https://www.effectivecreativeformats.com/ec36492b749edd34a18d22588bedadb0/invoke.js");
+    document.getElementsByClassName("placeForAds")[0].appendChild(recaptchaScript);
+
+    // document.head.appendChild(recaptchaScript);
   },
   updated() {
     if (this.showFirstPartCode) {

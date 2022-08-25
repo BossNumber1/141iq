@@ -99,7 +99,7 @@
           <a href="https://t.me/moyustimov">t.me/moyustimov</a>
         </div>
         <div class="footer__visitors">
-          <img src="../public/pictures/eye.png" alt="eye" /> Нас посетило: <b>2</b> человек
+          <img src="../public/pictures/eye.png" alt="eye" /> Нас посетило: <b>3</b> человек
         </div>
       </div>
     </div>
@@ -461,7 +461,7 @@ body {
 .placeForAds {
   // width: 100%;
   width: max-content;
-  border: 1px solid;
+  // border: 1px solid;
   height: 250px;
   margin: 50px 0;
 }

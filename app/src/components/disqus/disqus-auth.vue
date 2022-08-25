@@ -38,51 +38,53 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.auth {
-  margin: 32px;
-  font-size: 18px;
-  width: max-content;
-  margin: 0 auto;
-}
+<style lang="scss" scoped>
+  @import '../../styles/sass/common/vars.scss';
 
-.auth-btn {
-  display: flex;
-  padding: 12px 0 0 3px;
-  // align-items: center;
-  /* animation: blink-animation 5s steps(5, start) infinite;
-  -webkit-animation: blink-animation 5s steps(15, start) infinite; */
-}
-
-@keyframes blink-animation {
-  0% {
-    opacity: 1;
+  .auth {
+    margin: 32px;
+    font-size: 18px;
+    width: max-content;
+    margin: 0 auto;
   }
 
-  50% {
-    opacity: 0.5;
+  .auth-btn {
+    display: flex;
+    padding: 12px 0 0 3px;
+    // align-items: center;
+    /* animation: blink-animation 5s steps(5, start) infinite;
+    -webkit-animation: blink-animation 5s steps(15, start) infinite; */
   }
 
-  100% {
-    opacity: 0;
-    /* visibility: hidden; */
-    content: "hi";
-  }
-}
+  @keyframes blink-animation {
+    0% {
+      opacity: 1;
+    }
 
-@-webkit-keyframes blink-animation {
-  to {
-    /* visibility: hidden; */
-  }
-}
+    50% {
+      opacity: 0.5;
+    }
 
-#vkBtnAuth,
-#fbBtnAuth {
-  cursor: url('../../../public/pictures/cursors/pointer.png'), pointer;
-  margin-left: 10px;
-
-  &:hover {
-    transform: scale(1.4);
+    100% {
+      opacity: 0;
+      /* visibility: hidden; */
+      content: "hi";
+    }
   }
-}
+
+  @-webkit-keyframes blink-animation {
+    to {
+      /* visibility: hidden; */
+    }
+  }
+
+  #vkBtnAuth,
+  #fbBtnAuth {
+    cursor: $cursorPointer;
+    margin-left: 10px;
+
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
 </style>

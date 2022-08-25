@@ -85,12 +85,23 @@
     </div>
     <div class="footer">
       <div>
-        <img src="../public/pictures/dogfriend.png" />
+        <img src="../public/pictures/dogfriend.png" alt="dog image" />
         <p>
-          <!-- Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a> -->
           Незнание вменяется в вину
         </p>
         <div class="footer-original-quote">Imperitia pro culpa habetur</div>
+      </div>
+      <div>
+        <div class="footer__creator">
+          <img src="../public/pictures/creator.png" alt="creator" /> Дмитрий Устинов
+        </div>
+        <div class="footer__contacts">
+          <img src="../public/pictures/contacts.png" alt="contacts" />
+          <a href="https://t.me/moyustimov">t.me/moyustimov</a>
+        </div>
+        <div class="footer__visitors">
+          <img src="../public/pictures/eye.png" alt="eye" /> Нас посетил: <b>1</b> человек
+        </div>
       </div>
     </div>
   </div>
@@ -404,6 +415,7 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap");
+@import './styles/sass/common/vars.scss';
 
 body {
   font-family: "Roboto Slab", serif;
@@ -422,7 +434,7 @@ body {
   user-select: none;
   /* Non-prefixed version, currently not supported by any browser */
 
-  cursor: url('../public/pictures/cursors/default.png'), default;
+  cursor: $cursorDefault;
 }
 
 .header {
@@ -454,6 +466,7 @@ body {
         margin-bottom: 10px;
 
         &-title {
+          cursor: $cursorPointer;
           background-color: lightgray;
           color: #332525 !important;
           font-size: 20px;
@@ -462,7 +475,6 @@ body {
           padding-left: 20px;
           border-radius: 12px;
           margin-bottom: 10px;
-          cursor: url('../public/pictures/cursors/pointer.png'), pointer;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -485,8 +497,8 @@ body {
           }
 
           .copyIcon {
+            cursor: $cursorPointer;
             margin-top: 25px;
-            cursor: url('../public/pictures/cursors/pointer.png'), pointer;
               
             img {
               width: 30px;
@@ -507,6 +519,8 @@ body {
 
   // border-top: 0.5px solid #332525;
 
+  display: flex;
+
   img {
     width: 256px;
     height: 224px;
@@ -521,7 +535,35 @@ body {
 
   &-original-quote {
     font-size: 9px;
-    padding-left: 3px;
+    padding-left: 5px;
+  }
+
+  &__visitors, &__creator, &__contacts {
+    // width: max-content + 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    b {
+      margin: 0 5px;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    a {
+      cursor: $cursorPointer;
+      text-decoration: none !important;
+      color: black;
+
+      &:hover {
+        font-size: 25px;
+        transition: 0.5s;
+      }
+    }
   }
 }
 
@@ -540,4 +582,3 @@ img {
   height: auto;
 }
 </style>
-<!-- Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a> -->

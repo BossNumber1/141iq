@@ -45,9 +45,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @import '../../../styles/sass/common/vars.scss';
+
     #googleBtnAuth {
-        cursor: url('../../../../public/pictures/cursors/pointer.png'), pointer;
+        cursor: $cursorPointer;
         margin-left: 10px;
         border: none;
         background-color: white;

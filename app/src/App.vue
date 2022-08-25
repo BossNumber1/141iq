@@ -83,7 +83,16 @@
         </div>
       </div>
     </div>
-    <div class="footer mt-5"></div>
+    <div class="footer">
+      <div>
+        <img src="../public/pictures/dogfriend.png" />
+        <p>
+          <!-- Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a> -->
+          Незнание вменяется в вину
+        </p>
+        <div class="footer-original-quote">Imperitia pro culpa habetur</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -490,7 +499,31 @@ body {
   }
 }
 
-.footer {}
+.footer {
+  margin-top: 100px;
+  padding: 50px 50px 20px 50px;
+  border-top: 0.5px solid #e4e4e4;
+  background: aliceblue;
+
+  // border-top: 0.5px solid #332525;
+
+  img {
+    width: 256px;
+    height: 224px;
+  }
+
+  p {
+    // display: none;
+    font-size: 9px;
+    font-weight: 900;
+    margin-bottom: 5px;
+  }
+
+  &-original-quote {
+    font-size: 9px;
+    padding-left: 3px;
+  }
+}
 
 .title {
     text-align: center;
@@ -507,4 +540,4 @@ img {
   height: auto;
 }
 </style>
-
+<!-- Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a> -->

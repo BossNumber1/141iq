@@ -459,7 +459,8 @@ body {
 }
 
 .placeForAds {
-  width: 100%;
+  // width: 100%;
+  width: max-content;
   border: 1px solid;
   height: 250px;
   margin: 50px 0;
@@ -469,6 +470,8 @@ body {
   &__demo {
     &-content {
       margin-top: 50px;
+      display: flex;
+      align-items: center;
     }
   }
 

@@ -4,9 +4,6 @@
       <div class="title display-1"><mark>141</mark>iq</div>
       <div class="header__subtitle lead text-muted">Делаю сложное простым</div>
     </div>
-    <div class="placeForAds">
-
-    </div>
     <div class="title display-1">
       Фильтрация списка на Vue
     </div>
@@ -15,6 +12,7 @@
         <div class="titleBlock display-6">Что получаем</div>
         <div class="main__demo-content">
           <FilterContacts />
+          <div class="placeForAds"></div>
         </div>
       </div>
       <div class="main__src">
@@ -101,7 +99,7 @@
           <a href="https://t.me/moyustimov">t.me/moyustimov</a>
         </div>
         <div class="footer__visitors">
-          <img src="../public/pictures/eye.png" alt="eye" /> Нас посетил: <b>1</b> человек
+          <img src="../public/pictures/eye.png" alt="eye" /> Нас посетило: <b>2</b> человек
         </div>
       </div>
     </div>
@@ -463,7 +461,7 @@ body {
 .placeForAds {
   width: 100%;
   border: 1px solid;
-  height: 280px;
+  height: 250px;
   margin: 50px 0;
 }
 

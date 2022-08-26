@@ -95,8 +95,11 @@
         <div class="footer-original-quote">Imperitia pro culpa habetur</div>
       </div>
       <div>
-        <div class="footer__creator" @click="showAdminCardBio">
+        <div class="footer__creator" @click="showAdminCardBio" v-if="!showCardAdmin">
           <img src="../public/pictures/creator.png" alt="creator" /> Дмитрий Устинов
+        </div>
+        <div class="footer__creator" @click="showAdminCardBio" v-else>
+          <img src="../public/pictures/creator.png" alt="creator" /> Закрыть карточку
         </div>
         <div class="footer__contacts">
           <img src="../public/pictures/contacts.png" alt="contacts" />
@@ -399,7 +402,7 @@ export default {
       document.getElementsByClassName("copyIcon")[numberIcon].style.opacity = "0.3";
     },
     showAdminCardBio() {
-      this.showCardAdmin = true;
+      this.showCardAdmin = !this.showCardAdmin;
     }
   },
   mounted() {
@@ -575,6 +578,15 @@ body {
   &-original-quote {
     font-size: 9px;
     padding-left: 5px;
+  }
+
+  &__creator {
+    cursor: $cursorPointer;
+
+    &:hover {
+      font-size: 25px;
+      transition: 0.5s;
+    }
   }
 
   &__visitors, &__creator, &__contacts {

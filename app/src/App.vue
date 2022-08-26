@@ -5,8 +5,8 @@
       <div class="header__subtitle lead text-muted">Делаю сложное простым</div>
     </div>
     <div class="subheader mt-2">
-      <img src="../public/pictures/catbooks.png" alt="cat books" />
-      <img src="../public/pictures/womanstudy.png" alt="woman study" />
+      <!-- <img src="../public/pictures/catbooks.png" alt="cat books" /> -->
+      <!-- <img src="../public/pictures/womanstudy.png" alt="woman study" /> -->
     </div>
     <div class="title display-1 mt-3">
       Фильтрация списка на Vue
@@ -454,7 +454,7 @@ body {
 }
 
 .header {
-  padding-top: 50px;
+  padding-top: 183px;
   margin-bottom: 30px;
 
   &__subtitle {
@@ -464,19 +464,20 @@ body {
 
 .subheader {
   padding-left: 150px;
-img:nth-child(1) {
-    width: 256px;
-    height: 215px;
-    margin-right: 195px;
-  } 
+// img:nth-child(1) {
+//     width: 256px;
+//     height: 215px;
+//     margin-right: 195px;
+//   } 
 
-
-img:nth-child(2) {
-  margin-top: 15px;
+// img:nth-child(2) {
+// img {
+  // margin-top: 15px;
     width: 255px;
-    height: 130px;
+        height: 74px;
+    // height: 130px;
     
-  } 
+  // } 
   
 }
 

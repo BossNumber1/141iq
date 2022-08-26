@@ -474,7 +474,7 @@ body {
 // img {
   // margin-top: 15px;
     width: 255px;
-        height: 74px;
+        height: 88px;
     // height: 130px;
     
   // } 

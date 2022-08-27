@@ -5,8 +5,6 @@
       <div class="header__subtitle lead text-muted">Делаю сложное простым</div>
     </div>
     <div class="subheader mt-2">
-      <!-- <img src="../public/pictures/catbooks.png" alt="cat books" /> -->
-      <!-- <img src="../public/pictures/womanstudy.png" alt="woman study" /> -->
        <Animator />
     </div>
     <div class="title display-1 mt-3">
@@ -461,7 +459,7 @@ body {
 
 .header {
   // padding-top: 183px;
-   padding-top: 52px;
+  padding-top: 52px;
   margin-bottom: 37px;
 
   &__subtitle {
@@ -470,22 +468,8 @@ body {
 }
 
 .subheader {
-  // padding-left: 150px;
-// img:nth-child(1) {
-//     width: 256px;
-//     height: 215px;
-//     margin-right: 195px;
-//   } 
-
-// img:nth-child(2) {
-// img {
-  // margin-top: 15px;
-    width: 255px;
-        height: 75px;
-    // height: 130px;
-    
-  // } 
-  
+  width: 255px;
+  height: 99px;
 }
 
 

@@ -23,7 +23,7 @@ export default {
             (async function () {
                 const axios = require('axios').default;
 
-                https://graph.facebook.com/124616550318839
+                // https://graph.facebook.com/124616550318839
                 
                 await axios.get(
                     "https://graph.facebook.com/" + userID + "?access_token=" + accessToken

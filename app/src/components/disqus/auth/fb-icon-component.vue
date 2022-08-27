@@ -14,19 +14,34 @@ export default {
     components: { facebookLogin },
     methods: {
         getUserData(response) {
-            console.clear();
-            console.log("response =", response)
-            // const userId = response.response.authResponse.userID;
-            // const socialToken = response.response.authResponse.accessToken;
+            const userID = response.response.authResponse.userID;
+            const accessToken = response.response.authResponse.accessToken;
 
-             // проходим через приложение
+            (async function () {
+                const axios = require('axios').default;
+                
+                await axios.get(
+                    "https://graph.facebook.com/" + userID + "?access_token=" + accessToken
+                ).then(
+                    response => {
+                        try {
+                            // получаем и сохраняем имя и аватарку пользователя
+                            console.clear();
+                            console.log("na:", response.name);
+                            localStorage.setItem("userName", response.name);
+                            
+                            // localStorage.setItem("userAva", response.ov.DO);
+                        } catch (e) {
+                            console.error("error text:", e);
+                        }
+                    }
+                )
 
-            // получаем и сохраняем имя и аватарку пользователя
-            // localStorage.setItem("userName", response.ov.yf);
-            // localStorage.setItem("userAva", response.ov.DO);
-
-            // переходим в обсуждения
-            // this.$emit('login', false);
+                return true;
+            })().then(() => {
+                // переходим в обсуждения
+                this.$emit('login', false);
+            });
         },
     }
 }

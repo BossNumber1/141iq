@@ -181,7 +181,7 @@ export default {
     this.userName = localStorage.getItem("userName");
 
     // включаем показ комментов
-      this.showComment = true;
+    this.showComment = true;
   },
 };
 </script>

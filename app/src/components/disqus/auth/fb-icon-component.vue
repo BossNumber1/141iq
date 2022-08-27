@@ -14,9 +14,14 @@ export default {
     components: { facebookLogin },
     methods: {
         getUserData(response) {
-            const userID = response.response.authResponse.userID;
-            const accessToken = response.response.authResponse.accessToken;
-            let loginStatus;
+            let userID, accessToken, loginStatus;
+
+            if (response.response) {
+                userID = response.response.authResponse.userID;
+                accessToken = response.response.authResponse.accessToken;
+            } else {
+                console.log("response check: ", response)
+            }
 
             (async function () {
                 const axios = require('axios').default;

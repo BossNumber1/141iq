@@ -14,11 +14,10 @@ export default {
     components: { facebookLogin },
     methods: {
         getUserData(response) {
-            
             const userID = response.response.authResponse.userID;
             const accessToken = response.response.authResponse.accessToken;
 
-console.clear();
+            console.clear();
             console.log("uid =", userID);
 
             (async function () {

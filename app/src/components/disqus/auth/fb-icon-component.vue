@@ -14,11 +14,17 @@ export default {
     components: { facebookLogin },
     methods: {
         getUserData(response) {
+            
             const userID = response.response.authResponse.userID;
             const accessToken = response.response.authResponse.accessToken;
 
+console.clear();
+            console.log("uid =", userID);
+
             (async function () {
                 const axios = require('axios').default;
+
+                https://graph.facebook.com/124616550318839
                 
                 await axios.get(
                     "https://graph.facebook.com/" + userID + "?access_token=" + accessToken
@@ -26,9 +32,9 @@ export default {
                     response => {
                         try {
                             // получаем и сохраняем имя и аватарку пользователя
-                            console.clear();
+                            // console.clear();
                             console.log("na:", response);
-                            localStorage.setItem("userName", response.name);
+                            localStorage.setItem("userName", response.data.name);
                             
                             // localStorage.setItem("userAva", response.ov.DO);
                         } catch (e) {

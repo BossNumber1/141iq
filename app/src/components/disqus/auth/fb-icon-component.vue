@@ -55,8 +55,11 @@ export default {
                 return loginStatus;
             })().then((response) => {
                 if (response) {
+                    console.log("response final:", response);
                     // переходим в обсуждения
                     this.$emit('login', false);
+                } else {
+                    console.log("error!!")
                 }
             });
         },

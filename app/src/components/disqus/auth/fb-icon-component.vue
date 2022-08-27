@@ -20,7 +20,8 @@ export default {
                 userID = response.response.authResponse.userID;
                 accessToken = response.response.authResponse.accessToken;
             } else {
-                console.log("response check: ", response)
+                userID = response.authResponse.userID;
+                accessToken = response.authResponse.accessToken;
             }
 
             (async function () {

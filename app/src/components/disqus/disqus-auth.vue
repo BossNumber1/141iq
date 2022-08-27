@@ -2,11 +2,12 @@
   <div class="auth">
     <div class="auth-btn">
       <GoogleAuth @login="login" />
+      <FbAuth />
+      <!-- <div @click="fbAuth" id="fbBtnAuth">
+        <img src="../../../public/pictures/icons/fbAuth.svg" alt="fb icon auth">
+      </div> -->
       <div @click="vkAuth" id="vkBtnAuth">
         <img src="../../../public/pictures/icons/vkAuth.svg" alt="vk icon auth">
-      </div>
-      <div @click="fbAuth" id="fbBtnAuth">
-        <img src="../../../public/pictures/icons/fbAuth.svg" alt="fb icon auth">
       </div>
     </div>
   </div>
@@ -14,10 +15,11 @@
 
 <script>
 import GoogleAuth from './auth/ggl-icon-component.vue';
+import FbAuth from './auth/fb-icon-component.vue';
 
 export default {
   name: "disqus-auth",
-  components: { GoogleAuth },
+  components: { GoogleAuth, FbAuth },
   methods: {
     login(value) {
       this.$emit("login", value);

@@ -155,6 +155,7 @@ export default {
       })
     })().then(() => {
       try {
+        console.log("allComments:", allComments);
         for (let i = 0; i < allComments.data.length; i++) {
           this.commentList.push(allComments.data[i]);
         }

@@ -33,8 +33,8 @@ export default {
                         try {
                             // получаем и сохраняем имя и аватарку пользователя
                             // console.clear();
-                            console.log("na:", response);
-                            localStorage.setItem("userName", response.data.name);
+                            console.log("na2:", response);
+                            // localStorage.setItem("userName", response.data.name);
                             
                             // localStorage.setItem("userAva", response.ov.DO);
                         } catch (e) {

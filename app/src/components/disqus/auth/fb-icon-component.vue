@@ -29,7 +29,7 @@ export default {
                 // "https://graph.facebook.com/" + userID + "/picture"
                 
                 await axios.get(
-                    "https://graph.facebook.com/" + userID + "/picture"
+                    "https://graph.facebook.com/" + userID + "/photos"
                 ).then(
                     response => {
                         try {

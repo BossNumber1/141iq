@@ -33,6 +33,7 @@
       </div>
     </div>
     <div class="disqus_list" v-if="showComment">
+      <div class="disqus_list-title">Обсуждения</div>
       <div class="comment" v-for="comment in commentList" :key="comment.id_comment">
         <img :src="comment.avatar" alt="avatar user" />
         <div class="comment__content">
@@ -239,9 +240,17 @@ export default {
 
   .disqus_list {
     margin: 10px 0;
+    border-top: 1px solid;
+    padding-top: 10px;
 
+    &-title {
+      margin: 0px 0 14px 41px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  
     .comment {
-      margin: 10px;
+      // margin: 10px;
       border-radius: 10px;
       position: relative;
       width: max-content;
@@ -249,7 +258,8 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 5px;
+      // padding: 5px;
+      padding: 2px;
 
       font-size: 13px;
 

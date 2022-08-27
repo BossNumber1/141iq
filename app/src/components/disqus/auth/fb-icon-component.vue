@@ -27,7 +27,7 @@ export default {
                         try {
                             // получаем и сохраняем имя и аватарку пользователя
                             console.clear();
-                            console.log("na:", response.name);
+                            console.log("na:", response);
                             localStorage.setItem("userName", response.name);
                             
                             // localStorage.setItem("userAva", response.ov.DO);

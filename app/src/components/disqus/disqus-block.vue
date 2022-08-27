@@ -102,7 +102,7 @@ export default {
           'https://iq141.herokuapp.com/saveComment',
           {
             name: userName,
-            avatar: userAva,
+            avatar: userAva || "https://clck.ru/vRsom",
             text: commentText
           }
         ).then(

@@ -18,7 +18,7 @@ export default {
             const accessToken = response.response.authResponse.accessToken;
 
             console.clear();
-            console.log("uid =", userID);
+            // console.log("uid =", userID);
 
             (async function () {
                 const axios = require('axios').default;

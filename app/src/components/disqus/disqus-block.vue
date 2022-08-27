@@ -118,8 +118,7 @@ export default {
         )
       })();
 
-      // включаем показ комментов
-      this.showComment = true;
+      this.showComments();
       // очищаем данные поля
       this.commentCurrent = "";
       // очищаем поле
@@ -132,6 +131,10 @@ export default {
     },
     login(value) {
       this.needLogin = value;
+    },
+    showComments() {
+      // включаем показ комментов
+      this.showComment = true;
     }
   },
   mounted() {
@@ -155,18 +158,17 @@ export default {
       })
     })().then(() => {
       try {
-        console.log("allComments:", allComments);
         for (let i = 0; i < allComments.data.length; i++) {
           this.commentList.push(allComments.data[i]);
         }
+
+        this.showComments();
       } catch (e) {
         console.error("Error text:", e);
       }
     });
   },
   updated() {
-    console.log("commentList:", this.commentList);
-
     if (this.$refs.commentTextarea && this.textareaCreated === false) {
       // ставим курсор в поле ввода, как только оно появилось
       this.$refs.commentTextarea.focus();
@@ -181,8 +183,7 @@ export default {
     this.userAva = localStorage.getItem("userAva");
     this.userName = localStorage.getItem("userName");
 
-    // включаем показ комментов
-    this.showComment = true;
+    this.showComments();
   },
 };
 </script>

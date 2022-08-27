@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="disqus_list" v-if="showComment">
+    <div class="disqus_list" v-if="showComment && commentList.length > 0">
       <div class="disqus_list-title">Обсуждения</div>
       <div class="comment" v-for="comment in commentList" :key="comment.id_comment">
         <img :src="comment.avatar" alt="avatar user" />

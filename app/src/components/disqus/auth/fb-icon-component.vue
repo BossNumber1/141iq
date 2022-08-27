@@ -15,31 +15,26 @@ export default {
     methods: {
         getUserData(response) {
             const userID = response.response.authResponse.userID;
-            // const accessToken = response.response.authResponse.accessToken;
-
-            console.clear();
-            // console.log("uid =", userID);
+            const accessToken = response.response.authResponse.accessToken;
 
             (async function () {
                 const axios = require('axios').default;
 
                 // https://graph.facebook.com/124616550318839
-                // "https://graph.facebook.com/" + userID + "?access_token=" + accessToken
-
-                // "https://graph.facebook.com/" + userID + "/picture"
                 
                 await axios.get(
-                    "https://graph.facebook.com/" + userID + "/photos"
+                    "https://graph.facebook.com/" + userID + "?access_token=" + accessToken
                 ).then(
                     response => {
                         try {
-                            // получаем и сохраняем имя и аватарку пользователя
-                            // console.clear();
+                            // получаем и сохраняем имя пользователя
+                            console.clear();
                             console.log("response:", response);
-                            console.log("response img:", response.data);
+                            console.log("response name:", response.data.name);
                             // localStorage.setItem("userName", response.data.name);
                             
-                            // localStorage.setItem("userAva", response.ov.DO);
+                            // создаём аватарку проекта для фейсбучных пользователей
+                            // background: linear-gradient(to right, blue, pink);
                         } catch (e) {
                             console.error("error text:", e);
                         }

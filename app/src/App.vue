@@ -7,6 +7,7 @@
     <div class="subheader mt-2">
       <!-- <img src="../public/pictures/catbooks.png" alt="cat books" /> -->
       <!-- <img src="../public/pictures/womanstudy.png" alt="woman study" /> -->
+       <Animator />
     </div>
     <div class="title display-1 mt-3">
       Фильтрация списка на Vue
@@ -117,6 +118,7 @@
 import FilterContacts from "./components/FilterContacts";
 import DisqusBlock from "./components/disqus/disqus-block";
 import AdminCard from "./components/AdminCard.vue"
+import Animator from "./components/Animator.vue"
 
 const db = [
   {
@@ -330,7 +332,8 @@ export default {
   components: {
     FilterContacts,
     DisqusBlock,
-    AdminCard
+    AdminCard,
+    Animator
   },
   data() {
     return {
@@ -457,8 +460,9 @@ body {
 }
 
 .header {
-  padding-top: 183px;
-  margin-bottom: 30px;
+  // padding-top: 183px;
+   padding-top: 52px;
+  margin-bottom: 37px;
 
   &__subtitle {
     text-align: center;
@@ -466,7 +470,7 @@ body {
 }
 
 .subheader {
-  padding-left: 150px;
+  // padding-left: 150px;
 // img:nth-child(1) {
 //     width: 256px;
 //     height: 215px;
@@ -477,7 +481,7 @@ body {
 // img {
   // margin-top: 15px;
     width: 255px;
-        height: 88px;
+        height: 75px;
     // height: 130px;
     
   // } 

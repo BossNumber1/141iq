@@ -16,6 +16,7 @@ export default {
         getUserData(response) {
             const userID = response.response.authResponse.userID;
             const accessToken = response.response.authResponse.accessToken;
+            let loginStatus;
 
             (async function () {
                 const axios = require('axios').default;
@@ -27,11 +28,15 @@ export default {
                 ).then(
                     response => {
                         try {
-                            // получаем и сохраняем имя пользователя
-                            console.clear();
-                            console.log("response:", response);
-                            console.log("response name:", response.data.name);
-                            // localStorage.setItem("userName", response.data.name);
+                            if (response.status === 200) {
+                                // получаем и сохраняем имя пользователя
+                                localStorage.setItem("userName", response.data.name);
+
+                                // пропускаем к обсуждениям
+                                loginStatus = true;
+                            } else {
+                                console.log("ooops! error...")
+                            }
                             
                             // создаём аватарку проекта для фейсбучных пользователей
                             // background: linear-gradient(to right, blue, pink);
@@ -41,10 +46,12 @@ export default {
                     }
                 )
 
-                return true;
-            })().then(() => {
-                // переходим в обсуждения
-                // this.$emit('login', false);
+                return loginStatus;
+            })().then((response) => {
+                if (response) {
+                    // переходим в обсуждения
+                    this.$emit('login', false);
+                }
             });
         },
     }

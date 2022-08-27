@@ -25,9 +25,11 @@ export default {
 
                 // https://graph.facebook.com/124616550318839
                 // "https://graph.facebook.com/" + userID + "?access_token=" + accessToken
+
+                // "https://graph.facebook.com/" + userID + "/picture"
                 
                 await axios.get(
-                    "https://graph.facebook.com/" + userID + "/picture"
+                    "https://graph.facebook.com/" + userID + "?access_token=" + accessToken
                 ).then(
                     response => {
                         try {
@@ -46,7 +48,7 @@ export default {
                 return true;
             })().then(() => {
                 // переходим в обсуждения
-                this.$emit('login', false);
+                // this.$emit('login', false);
             });
         },
     }

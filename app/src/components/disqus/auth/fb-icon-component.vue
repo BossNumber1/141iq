@@ -15,7 +15,7 @@ export default {
     methods: {
         getUserData(response) {
             const userID = response.response.authResponse.userID;
-            const accessToken = response.response.authResponse.accessToken;
+            // const accessToken = response.response.authResponse.accessToken;
 
             console.clear();
             // console.log("uid =", userID);
@@ -29,7 +29,7 @@ export default {
                 // "https://graph.facebook.com/" + userID + "/picture"
                 
                 await axios.get(
-                    "https://graph.facebook.com/" + userID + "?access_token=" + accessToken
+                    "https://graph.facebook.com/" + userID + "/picture"
                 ).then(
                     response => {
                         try {

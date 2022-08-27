@@ -2,7 +2,7 @@
   <div class="auth">
     <div class="auth-btn">
       <GoogleAuth @login="login" />
-      <FbAuth />
+      <FbAuth @login="login" />
       <!-- <div @click="fbAuth" id="fbBtnAuth">
         <img src="../../../public/pictures/icons/fbAuth.svg" alt="fb icon auth">
       </div> -->

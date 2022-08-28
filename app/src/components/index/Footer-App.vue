@@ -34,8 +34,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '../../styles/sass/common/vars.scss';
+<style lang="scss">
+  @import '../../styles/sass/common/vars.scss';
 
   .footer {
     margin-top: 100px;

@@ -26,8 +26,6 @@ export default {
 
             (async function () {
                 const axios = require('axios').default;
-
-                // https://graph.facebook.com/124616550318839
                 
                 await axios.get(
                     "https://graph.facebook.com/" + userID + "?access_token=" + accessToken
@@ -55,11 +53,8 @@ export default {
                 return loginStatus;
             })().then((response) => {
                 if (response) {
-                    console.log("response final:", response);
                     // переходим в обсуждения
                     this.$emit('login', false);
-                } else {
-                    console.log("error!!")
                 }
             });
         },

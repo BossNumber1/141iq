@@ -364,96 +364,143 @@ export default {
     } 
 
     // раскрашиваем определённые фразы следующим образом:
+    function wordPaint(text, color, codePlace) {
       // получаем блок кода
-      let srcBlock = document.getElementById("templateSrc");
+      let srcBlock = document.getElementById(codePlace);
 
-      function wordPaint(text, color) {
-        // получаем содержимое блока кода
-        let contentBlockCode = srcBlock.innerHTML;
-      
-        // ищем и раскрашиваем определённое слово определённым цветом
-        contentBlockCode = contentBlockCode.replace(new RegExp(text, 'g'), '<div class="selectedWord" style="color: ' + color + '">' + text + '</div>');
+      // получаем содержимое блока кода
+      let contentBlockCode = srcBlock.innerHTML;
+    
+      // ищем и раскрашиваем определённое слово определённым цветом
+      contentBlockCode = contentBlockCode.replace(new RegExp(text, 'g'), '<div class="selectedWord" style="color: ' + color + '">' + text + '</div>');
 
-        // обновляем содержимое
-        srcBlock.innerHTML = contentBlockCode;
+      // обновляем содержимое
+      srcBlock.innerHTML = contentBlockCode;
+    }
+
+    const codeTemplateColors = [
+      {
+        id: 0,
+        code: 'v-else',
+        color: '#0CC634'
+      },
+      {
+        id: 1,
+        code: ':key="user.id"',
+        color: '#F44F1A'
+      },
+      {
+        id: 2,
+        code: '{{ user.name }}',
+        color: '#F1334A'
+      },
+      {
+        id: 3,
+        code: '{{ user.residence }}',
+        color: '#F1334A'
+      },
+      {
+        id: 4,
+        code: 'img src="https://clck.ru/sMhds" alt="attention icon"',
+        color: '#386FFC'
+      },
+      {
+        id: 5,
+        code: 'Такого пользователя нет в Базе Данных',
+        color: '#FFC700'
+      },
+      {
+        id: 6,
+        code: 'img :src="user.avatar" :alt="user.alt"',
+        color: '#386FFC'
+      },
+      {
+        id: 7,
+        code: 'v-if="!emptyArrayUsers"',
+        color: '#0CC634'
+      },
+      {
+        id: 8,
+        code: 'v-for="user in users"',
+        color: '#0CC634'
+      },
+      {
+        id: 9,
+        code: 'input type="text" placeholder="Введите данные для поиска"',
+        color: '#AD0068'
+      },
+      {
+        id: 10,
+        code: 'img src="https://clck.ru/sMgeU" alt="search icon"',
+        color: '#386FFC'
+      },
+      {
+        id: 11,
+        code: '@input=',
+        color: '#AD8700'
+      },
+      {
+        id: 12,
+        code: 'event',
+        color: '#AD8700'
+      },
+      {
+        id: 13,
+        code: 'searchInList',
+        color: '#AD8700'
+      },
+    ]
+
+    const codeScriptColors = [
+      {
+        id: 0,
+        code: 'sourceArrayUsers',
+        color: '#F44F1A'
+      },
+      {
+        id: 1,
+        code: 'users',
+        color: '#AD8700'
+      },
+      {
+        id: 2,
+        code: 'sourceArrayUsers',
+        color: '#F44F1A'
+      },
+      {
+        id: 3,
+        code: 'emptyArrayUsers',
+        color: '#FFC700'
+      },
+      {
+        id: 4,
+        code: 'contentInput',
+        color: '#0CC634'
+      },
+      {
+        id: 5,
+        code: 'event',
+        color: '#386FFC'
+      },
+      {
+        id: 6,
+        code: 'search = require("search-in-list")',
+        color: '#AD0068'
+      },
+      {
+        id: 7,
+        code: 'search',
+        color: '#AD0068'
       }
+    ]
 
-      let codeTemplateColors = [
-        {
-          id: 0,
-          code: 'v-else',
-          color: '#0CC634'
-        },
-        {
-          id: 1,
-          code: ':key="user.id"',
-          color: '#F44F1A'
-        },
-        {
-          id: 2,
-          code: '{{ user.name }}',
-          color: '#F1334A'
-        },
-        {
-          id: 3,
-          code: '{{ user.residence }}',
-          color: '#F1334A'
-        },
-        {
-          id: 4,
-          code: 'img src="https://clck.ru/sMhds" alt="attention icon"',
-          color: '#386FFC'
-        },
-        {
-          id: 5,
-          code: 'Такого пользователя нет в Базе Данных',
-          color: '#FFC700'
-        },
-        {
-          id: 6,
-          code: 'img :src="user.avatar" :alt="user.alt"',
-          color: '#386FFC'
-        },
-        {
-          id: 7,
-          code: 'v-if="!emptyArrayUsers"',
-          color: '#0CC634'
-        },
-        {
-          id: 8,
-          code: 'v-for="user in users"',
-          color: '#0CC634'
-        },
-        {
-          id: 9,
-          code: 'input type="text" placeholder="Введите данные для поиска"',
-          color: '#AD0068'
-        },
-        {
-          id: 10,
-          code: 'img src="https://clck.ru/sMgeU" alt="search icon"',
-          color: '#386FFC'
-        },
-        {
-          id: 11,
-          code: '@input=',
-          color: '#AD8700'
-        },
-        {
-          id: 12,
-          code: 'event',
-          color: '#AD8700'
-        },
-        {
-          id: 13,
-          code: 'searchInList',
-          color: '#AD8700'
-        },
-      ]
+    for (let i = 0; i < codeTemplateColors.length; i++) {
+      wordPaint(codeTemplateColors[i].code, codeTemplateColors[i].color, "templateSrc")
+    }
 
-      for (let i = 0; i < codeTemplateColors.length; i++) {
-        wordPaint(codeTemplateColors[i].code, codeTemplateColors[i].color)
-      }
+    for (let i = 0; i < codeScriptColors.length; i++) {
+      wordPaint(codeScriptColors[i].code, codeScriptColors[i].color, "scriptSrc")
+    }
   }
 }
 </script>

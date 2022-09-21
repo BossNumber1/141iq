@@ -494,6 +494,84 @@ export default {
       }
     ]
 
+    const codeStyleColors = [
+      {
+        id: 0,
+        code: '.container',
+        color: '#F44F1A'
+      },
+      {
+        id: 1,
+        code: '.header',
+        color: '#AD8700'
+      },
+      {
+        id: 2,
+        code: '&__inputArea',
+        color: '#AD0068'
+      },
+      {
+        id: 3,
+        code: '.header__inputContent',
+        color: '#0CC634'
+      },
+      {
+        id: 4,
+        code: 'input',
+        color: '#386FFC'
+      },
+      {
+        id: 5,
+        code: '.main',
+        color: '#AD8700'
+      },
+      {
+        id: 6,
+        code: '.usersList',
+        color: '#AD0068'
+      },
+      {
+        id: 7,
+        code: '.list',
+        color: '#0CC634'
+      },
+      {
+        id: 8,
+        code: '.userInfo',
+        color: '#386FFC'
+      },
+      {
+        id: 9,
+        code: '.userAvatar',
+        color: '#8F00FF'
+      },
+      {
+        id: 10,
+        code: '.userData',
+        color: '#8F00FF'
+      },
+      {
+        id: 11,
+        code: '.userName',
+        color: '#CF2727'
+      },
+      {
+        id: 12,
+        code: '.userResidence',
+        color: '#CF2727'
+      },
+      {
+        id: 13,
+        code: '&__warning',
+        color: '#AD0068'
+      },
+      {
+        id: 14,
+        code: '&-icon',
+        color: '#0CC634'
+      },
+    ]
+
     for (let i = 0; i < codeTemplateColors.length; i++) {
       wordPaint(codeTemplateColors[i].code, codeTemplateColors[i].color, "templateSrc")
     }
@@ -501,11 +579,16 @@ export default {
     for (let i = 0; i < codeScriptColors.length; i++) {
       wordPaint(codeScriptColors[i].code, codeScriptColors[i].color, "scriptSrc")
     }
+
+    for (let i = 0; i < codeStyleColors.length; i++) {
+      wordPaint(codeStyleColors[i].code, codeStyleColors[i].color, "stylesSrc")
+    }
   }
 }
 </script>
 
 <style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
   @import '../../../styles/sass/common/vars.scss';
 
   .selectedWord {
@@ -542,6 +625,7 @@ export default {
             display: none;
 
             #templateSrc, #scriptSrc, #stylesSrc {
+              font-family: 'Padauk', sans-serif;
               margin-left: 10px;
               border: 1px solid;
               border-radius: 12px;

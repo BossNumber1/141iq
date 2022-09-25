@@ -19,7 +19,7 @@
         <a href="https://t.me/moyustimov">t.me/moyustimov</a>
       </div>
       <div class="footer__visitors">
-        <img src="../../../public/pictures/eye.png" alt="eye" /> Нас посетило: <b>5</b> человек
+        <img src="../../../public/pictures/eye.png" alt="eye" /> Нас посетило: <b>8</b> человек
       </div>
     </div>
   </div>

@@ -144,21 +144,26 @@
         \u00a0\u00a0},
         \u00a0\u00a0methods: {
         \u00a0\u00a0\u00a0\u00a0searchInList(event) {
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0const search search-in-list; // включаем библиотеку поиска
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// включаем библиотеку поиска
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0const search search-in-list;
 
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0if (event.target.value === "") {
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// при очистке поля - возвращаем исходный список
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = sourceArrayUsers;
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0} else if (event.target.value.length > this.contentInput.length) {
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(this.users, event.target.value); // фильтруем исходный массив
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// фильтруем исходный массив
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(this.users, event.target.value);
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0} else if (event.target.value.length < this.contentInput.length) {
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.emptyArrayUsers = false;
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(sourceArrayUsers, event.target.value); // фильтруем исходный массив
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// фильтруем исходный массив
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(sourceArrayUsers, event.target.value);
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0} else {
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(sourceArrayUsers, event.target.value); // фильтруем исходный массив
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// фильтруем исходный массив
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(sourceArrayUsers, event.target.value);
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
 
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.contentInput = event.target.value; // сохраняем текущее содержимое
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// сохраняем текущее содержимое
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.contentInput = event.target.value;
 
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0if (this.users.length === 0) {
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// даём сигнал, что список доступных пользователей закончился

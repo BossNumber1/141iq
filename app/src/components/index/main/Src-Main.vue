@@ -20,6 +20,7 @@
             </div>
           </div>
         </div>
+        <!-- <div class="hljs-literal">&_body3</div> -->
         <div class="codeBlock">
           <div class="codeBlock-title badge text-bg-warning" @click="manageDisplayRequiredCode('1')">
             <div>script</div>
@@ -143,7 +144,7 @@
         \u00a0\u00a0},
         \u00a0\u00a0methods: {
         \u00a0\u00a0\u00a0\u00a0searchInList(event) {
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0const search = require("search-in-list"); // включаем библиотеку поиска
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0const search search-in-list; // включаем библиотеку поиска
 
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0if (event.target.value === "") {
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// при очистке поля - возвращаем исходный список
@@ -176,7 +177,7 @@
         \u00a0\u00a0.header {
         \u00a0\u00a0\u00a0\u00a0padding: 6px 0;
 
-        \u00a0\u00a0\u00a0\u00a0&__inputArea {
+        \u00a0\u00a0\u00a0\u00a0inputArea {
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0border: 1px solid gray;
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0border-radius: 12px;
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0display: flex;
@@ -188,7 +189,6 @@
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0flex-grow: 0;
 
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0.header__inputContent {
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// border: 1px solid orange;
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0display: flex;
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0flex-direction: column;
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0justify-content: center;
@@ -255,11 +255,11 @@
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
         \u00a0\u00a0\u00a0\u00a0}
 
-        \u00a0\u00a0\u00a0\u00a0&__warning {
+        \u00a0\u00a0\u00a0\u00a0warning {
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0display: flex;
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0align-items: center;
 
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0&-icon {
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0icon {
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0margin-right: 10px;
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
         \u00a0\u00a0\u00a0\u00a0}
@@ -292,11 +292,16 @@ export default {
 
         // показываем или убираем содержимое кликнутого блока
         allCodeParts[0].style.display = this.showFirstPartCode ? "block" : "none";
+        document.querySelector("#templateSrc").innerText = this.src[0].src;
 
         // скрываем оставшиеся блоки
         if (this.showFirstPartCode) {
           allCodeParts[1].style.display = "none";
           allCodeParts[2].style.display = "none";
+          
+          // document.querySelector("#templateSrc").innerText = "";
+          document.querySelector("#scriptSrc").innerText = "";
+          document.querySelector("#stylesSrc").innerText = "";
         }
       } else if (numberBlock === "1") {
         this.showFirstPartCode = false;
@@ -305,11 +310,16 @@ export default {
 
         // показываем или убираем содержимое кликнутого блока
         allCodeParts[1].style.display = this.showSecondPartCode ? "block" : "none";
+        document.querySelector("#scriptSrc").innerText = this.src[1].src;
 
         // скрываем оставшиеся блоки
         if (this.showSecondPartCode) {
           allCodeParts[0].style.display = "none";
           allCodeParts[2].style.display = "none";
+
+          document.querySelector("#templateSrc").innerText = "";
+          // document.querySelector("#scriptSrc").innerText = "";
+          document.querySelector("#stylesSrc").innerText = "";
         }
       } else if (numberBlock === "2") {
         this.showFirstPartCode = false;
@@ -318,11 +328,16 @@ export default {
 
         // показываем или убираем содержимое кликнутого блока
         allCodeParts[2].style.display = this.showThirdPartCode ? "block" : "none";
+        document.querySelector("#stylesSrc").innerText = this.src[2].src;
 
         // скрываем оставшиеся блоки
         if (this.showThirdPartCode) {
           allCodeParts[0].style.display = "none";
           allCodeParts[1].style.display = "none";
+
+          document.querySelector("#templateSrc").innerText = "";
+          document.querySelector("#scriptSrc").innerText = "";
+          // document.querySelector("#stylesSrc").innerText = "";
         }
       }
     },
@@ -364,7 +379,7 @@ export default {
     } 
 
     // раскрашиваем определённые фразы следующим образом:
-    function wordPaint(text, color, codePlace) {
+    function wordPaint(code, color, codePlace) {
       // получаем блок кода
       let srcBlock = document.getElementById(codePlace);
 
@@ -372,7 +387,21 @@ export default {
       let contentBlockCode = srcBlock.innerHTML;
     
       // ищем и раскрашиваем определённое слово определённым цветом
-      contentBlockCode = contentBlockCode.replace(new RegExp(text, 'g'), '<div class="selectedWord" style="color: ' + color + '">' + text + '</div>');
+      if (code === "inputArea") {
+        contentBlockCode = contentBlockCode.replace("inputArea", '<div class="selectedWord" style="color: ' + color + '">' + "&__inputArea" + '</div>');
+      } else if (code === "warning") {
+        contentBlockCode = contentBlockCode.replace("warning", '<div class="selectedWord" style="color: ' + color + '">' + "&__warning" + '</div>');
+      } else if (code === "icon") {
+        contentBlockCode = contentBlockCode.replace("icon", '<div class="selectedWord" style="color: ' + color + '">' + "&-icon" + '</div>');
+      } else if (code === "search-in-list") {
+        contentBlockCode = contentBlockCode.replace("search-in-list", '<div class="selectedWord" style="color: ' + color + '">' + '= require("search-in-list")' + '</div>');
+      } else if (codePlace === "scriptSrc") {
+        const re = new RegExp(`${code}(?![-|a-zA-Zа-яёА-ЯЁ])`, 'g');
+        contentBlockCode = contentBlockCode.replace(re, `<div class="selectedWord" style="color: ${color}">${code}</div>`);
+      } else {
+        const re = new RegExp(`(^|[^_0-9a-zA-Zа-яёА-ЯЁ])${code}([^_0-9a-zA-Zа-яёА-ЯЁ]|$)`, 'g');
+        contentBlockCode = contentBlockCode.replace(re, `<div class="selectedWord" style="color: ${color}">${code}</div>`);
+      }
 
       // обновляем содержимое
       srcBlock.innerHTML = contentBlockCode;
@@ -464,34 +493,39 @@ export default {
       },
       {
         id: 2,
-        code: 'sourceArrayUsers',
-        color: '#F44F1A'
-      },
-      {
-        id: 3,
         code: 'emptyArrayUsers',
         color: '#FFC700'
       },
       {
-        id: 4,
+        id: 3,
         code: 'contentInput',
         color: '#0CC634'
       },
       {
-        id: 5,
+        id: 4,
         code: 'event',
         color: '#386FFC'
       },
+      // {
+      //   id: 5,
+      //   code: 'search = require("search-in-list")',
+      //   color: '#AD0068'
+      // },
+      // {
+      //   id: 6,
+      //   code: 'search',
+      //   color: '#AD0068'
+      // },
       {
-        id: 6,
-        code: 'search = require("search-in-list")',
+        id: 5,
+        code: 'search-in-list',
         color: '#AD0068'
       },
       {
-        id: 7,
+        id: 6,
         code: 'search',
         color: '#AD0068'
-      }
+      },
     ]
 
     const codeStyleColors = [
@@ -507,7 +541,7 @@ export default {
       },
       {
         id: 2,
-        code: '&__inputArea',
+        code: 'inputArea',
         color: '#AD0068'
       },
       {
@@ -562,12 +596,12 @@ export default {
       },
       {
         id: 13,
-        code: '&__warning',
+        code: 'warning',
         color: '#AD0068'
       },
       {
         id: 14,
-        code: '&-icon',
+        code: 'icon',
         color: '#0CC634'
       },
     ]
@@ -593,6 +627,8 @@ export default {
 
   .selectedWord {
     display: inline-block;
+    // margin: 0 5px;
+    // z-index: -1;
   }
 
   .main {

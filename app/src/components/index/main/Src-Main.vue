@@ -161,7 +161,7 @@
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// фильтруем исходный массив
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.users = search(sourceArrayUsers, event.target.value);
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0}
-
+        
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// сохраняем текущее содержимое
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0this.contentInput = event.target.value;
 
@@ -270,7 +270,7 @@
         \u00a0\u00a0\u00a0\u00a0}
         \u00a0\u00a0}
         }`
-      },
+    },
   ]
 
 export default {
@@ -491,6 +491,32 @@ export default {
         code: 'search',
         color: '#AD0068'
       },
+
+      {
+        id: 7,
+        code: '// включаем библиотеку поиска',
+        color: '#787878'
+      },
+      {
+        id: 8,
+        code: '// при очистке поля - возвращаем исходный список',
+        color: '#787878'
+      },
+      {
+        id: 9,
+        code: '// фильтруем исходный массив',
+        color: '#787878'
+      },
+      {
+        id: 10,
+        code: '// сохраняем текущее содержимое',
+        color: '#787878'
+      },
+      {
+        id: 11,
+        code: '// даём сигнал, что список доступных пользователей закончился',
+        color: '#787878'
+      },    
     ]
 
     const codeStyleColors = [
@@ -588,10 +614,21 @@ export default {
       let srcBlock = document.getElementById(codePlace);
 
       // получаем содержимое блока кода
-      let contentBlockCode = srcBlock.innerHTML;
+      let contentBlockCode = srcBlock.innerHTML;      
     
       // ищем и раскрашиваем определённое слово определённым цветом
-      if (code === "inputArea") {
+      if (code === "// включаем библиотеку поиска") {
+        contentBlockCode = contentBlockCode.replace("// включаем библиотеку поиска", '<div class="selectedWord" style="color: ' + color + '; font-size: 14px;">' + "// включаем библиотеку поиска" + '</div>');
+      } else if (code === "// при очистке поля - возвращаем исходный список") {
+        contentBlockCode = contentBlockCode.replace("// при очистке поля - возвращаем исходный список", '<div class="selectedWord" style="color: ' + color + '; font-size: 14px;">' + "// при очистке поля - возвращаем исходный список" + '</div>');
+      } else if (code === "// фильтруем исходный массив") {
+        const re = new RegExp(`${code}`, 'g');
+        contentBlockCode = contentBlockCode.replace(re, '<div class="selectedWord" style="color: ' + color + '; font-size: 14px;">' + "// фильтруем исходный массив" + '</div>');
+      } else if (code === "// сохраняем текущее содержимое") {
+        contentBlockCode = contentBlockCode.replace("// сохраняем текущее содержимое", '<div class="selectedWord" style="color: ' + color + '; font-size: 14px;">' + "// сохраняем текущее содержимое" + '</div>');
+      } else if (code === "// даём сигнал, что список доступных пользователей закончился") {
+        contentBlockCode = contentBlockCode.replace("// даём сигнал, что список доступных пользователей закончился", '<div class="selectedWord" style="color: ' + color + '; font-size: 14px;">' + "// даём сигнал, что список доступных пользователей закончился" + '</div>');
+      } else if (code === "inputArea") {
         contentBlockCode = contentBlockCode.replace("inputArea", '<div class="selectedWord" style="color: ' + color + '">' + "&__inputArea" + '</div>');
       } else if (code === "warning") {
         contentBlockCode = contentBlockCode.replace("warning", '<div class="selectedWord" style="color: ' + color + '">' + "&__warning" + '</div>');

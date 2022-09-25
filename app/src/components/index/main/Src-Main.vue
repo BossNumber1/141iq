@@ -367,46 +367,6 @@ export default {
     // document.head.appendChild(recaptchaScript);
   },
   updated() {
-    if (this.showFirstPartCode) {
-      document.getElementsByClassName("code")[0].style.display = "flex";
-      document.getElementsByClassName("code")[0].style.justifyContent = "space-between";
-    } else if (this.showSecondPartCode) {
-      document.getElementsByClassName("code")[1].style.display = "flex";
-      document.getElementsByClassName("code")[1].style.justifyContent = "space-between";
-    } else if (this.showThirdPartCode) {
-      document.getElementsByClassName("code")[2].style.display = "flex";
-      document.getElementsByClassName("code")[2].style.justifyContent = "space-between";
-    } 
-
-    // раскрашиваем определённые фразы следующим образом:
-    function wordPaint(code, color, codePlace) {
-      // получаем блок кода
-      let srcBlock = document.getElementById(codePlace);
-
-      // получаем содержимое блока кода
-      let contentBlockCode = srcBlock.innerHTML;
-    
-      // ищем и раскрашиваем определённое слово определённым цветом
-      if (code === "inputArea") {
-        contentBlockCode = contentBlockCode.replace("inputArea", '<div class="selectedWord" style="color: ' + color + '">' + "&__inputArea" + '</div>');
-      } else if (code === "warning") {
-        contentBlockCode = contentBlockCode.replace("warning", '<div class="selectedWord" style="color: ' + color + '">' + "&__warning" + '</div>');
-      } else if (code === "icon") {
-        contentBlockCode = contentBlockCode.replace("icon", '<div class="selectedWord" style="color: ' + color + '">' + "&-icon" + '</div>');
-      } else if (code === "search-in-list") {
-        contentBlockCode = contentBlockCode.replace("search-in-list", '<div class="selectedWord" style="color: ' + color + '">' + '= require("search-in-list")' + '</div>');
-      } else if (codePlace === "scriptSrc") {
-        const re = new RegExp(`${code}(?![-|a-zA-Zа-яёА-ЯЁ])`, 'g');
-        contentBlockCode = contentBlockCode.replace(re, `<div class="selectedWord" style="color: ${color}">${code}</div>`);
-      } else {
-        const re = new RegExp(`(^|[^_0-9a-zA-Zа-яёА-ЯЁ])${code}([^_0-9a-zA-Zа-яёА-ЯЁ]|$)`, 'g');
-        contentBlockCode = contentBlockCode.replace(re, `<div class="selectedWord" style="color: ${color}">${code}</div>`);
-      }
-
-      // обновляем содержимое
-      srcBlock.innerHTML = contentBlockCode;
-    }
-
     const codeTemplateColors = [
       {
         id: 0,
@@ -605,6 +565,54 @@ export default {
         color: '#0CC634'
       },
     ]
+
+    if (this.showFirstPartCode) {
+      document.getElementsByClassName("code")[0].style.display = "flex";
+      document.getElementsByClassName("code")[0].style.justifyContent = "space-between";
+    } else if (this.showSecondPartCode) {
+      document.getElementsByClassName("code")[1].style.display = "flex";
+      document.getElementsByClassName("code")[1].style.justifyContent = "space-between";
+    } else if (this.showThirdPartCode) {
+      document.getElementsByClassName("code")[2].style.display = "flex";
+      document.getElementsByClassName("code")[2].style.justifyContent = "space-between";
+    } 
+
+    // раскрашиваем определённые фразы следующим образом:
+    function wordPaint(code, color, codePlace) {
+      // получаем блок кода
+      let srcBlock = document.getElementById(codePlace);
+
+      // получаем содержимое блока кода
+      let contentBlockCode = srcBlock.innerHTML;
+    
+      // ищем и раскрашиваем определённое слово определённым цветом
+      if (code === "inputArea") {
+        contentBlockCode = contentBlockCode.replace("inputArea", '<div class="selectedWord" style="color: ' + color + '">' + "&__inputArea" + '</div>');
+      } else if (code === "warning") {
+        contentBlockCode = contentBlockCode.replace("warning", '<div class="selectedWord" style="color: ' + color + '">' + "&__warning" + '</div>');
+      } else if (code === "icon") {
+        contentBlockCode = contentBlockCode.replace("icon", '<div class="selectedWord" style="color: ' + color + '">' + "&-icon" + '</div>');
+      } else if (code === "search-in-list") {
+        contentBlockCode = contentBlockCode.replace("search-in-list", '<div class="selectedWord" style="color: ' + color + '">' + '= require("search-in-list")' + '</div>');
+      } else if (codePlace === "templateSrc") {
+        if (code === "event") {
+          const re = new RegExp(`${code}`, 'g');
+          contentBlockCode = contentBlockCode.replace(re, `<div class="selectedWord" style="color: ${color}">${code}</div>`);
+        } else {
+          // const re = new RegExp(`${code}(?![-|a-zA-Zа-яёА-ЯЁ])`, 'g');
+          contentBlockCode = contentBlockCode.replace(code, `<div class="selectedWord" style="color: ${color}">${code}</div>`);
+        }
+      } else if (codePlace === "scriptSrc") {
+        const re = new RegExp(`${code}(?![-|a-zA-Zа-яёА-ЯЁ])`, 'g');
+        contentBlockCode = contentBlockCode.replace(re, `<div class="selectedWord" style="color: ${color}">${code}</div>`);
+      } else {
+        const re = new RegExp(`(^|[^_0-9a-zA-Zа-яёА-ЯЁ])${code}([^_0-9a-zA-Zа-яёА-ЯЁ]|$)`, 'g');
+        contentBlockCode = contentBlockCode.replace(re, `<div class="selectedWord" style="color: ${color}">${code}</div>`);
+      }
+
+      // обновляем содержимое
+      srcBlock.innerHTML = contentBlockCode;
+    }
 
     for (let i = 0; i < codeTemplateColors.length; i++) {
       wordPaint(codeTemplateColors[i].code, codeTemplateColors[i].color, "templateSrc")

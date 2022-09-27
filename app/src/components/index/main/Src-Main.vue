@@ -969,6 +969,7 @@ export default {
             .copyIcon {
               cursor: $cursorPointer;
               margin-top: 25px;
+              height: 32px;
                 
               img {
                 width: 30px;

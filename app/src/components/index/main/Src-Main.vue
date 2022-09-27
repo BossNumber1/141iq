@@ -959,11 +959,11 @@ export default {
 
             #templateSrc, #scriptSrc, #stylesSrc {
               font-family: 'Padauk', sans-serif;
-              margin-left: 10px;
+              margin: 5px 0 0 10px;
               border: 1px solid;
               border-radius: 12px;
-              padding-right: 81px;
-              padding-left: 57px;
+              padding: 0 81px 9px 57px;
+              width: 93%;
             }
 
             .copyIcon {

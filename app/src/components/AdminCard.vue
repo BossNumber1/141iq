@@ -27,7 +27,7 @@ export default {
   .card {
     padding: 7px;
     width: 156px;
-    height: 268px;
+    height: 284px;
     border-radius: 12px;
     box-shadow:0 0 10px #000;
     position: absolute;

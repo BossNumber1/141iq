@@ -8,10 +8,10 @@
       <div class="footer-original-quote">Imperitia pro culpa habetur</div>
     </div>
     <div>
-      <div class="footer__creator" @click="this.$emit('showAdminCardBio')" v-if="!showCardAdmin">
+      <div class="footer__creator" @click="$emit('showAdminCardBio')" v-if="!showCardAdmin">
         <img src="../../../public/pictures/creator.png" alt="creator" /> Дмитрий Устинов
       </div>
-      <div class="footer__creator" @click="this.$emit('showAdminCardBio')" v-else>
+      <div class="footer__creator" @click="$emit('showAdminCardBio')" v-else>
         <img src="../../../public/pictures/creator.png" alt="creator" /> Закрыть карточку
       </div>
       <div class="footer__contacts">

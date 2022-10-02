@@ -1,17 +1,16 @@
 <template>
- 
-    <div class='body'>
-  <span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-  <div class='base'>
-    <span></span>
-    <div class='face'></div>
+  <div class='body'>
+    <span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class='base'>
+      <span></span>
+      <div class='face'></div>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -21,7 +20,6 @@ export default {
 </script>
 
 <style lang="scss">
- 
 
 body {
   overflow-x: hidden;

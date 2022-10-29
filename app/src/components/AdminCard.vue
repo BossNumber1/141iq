@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/sass/common/vars.scss';
+  @import '../styles/sass/common/vars.scss';
 
   .card {
     padding: 7px;

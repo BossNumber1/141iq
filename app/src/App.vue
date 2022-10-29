@@ -1,40 +1,13 @@
 <template>
   <div class="container" id="app">
-    <Header />
-    <PreMain />
-    <Main />
-    <AdminCard v-if="showCardAdmin" :showCardAdmin="showCardAdmin" />
-    <Footer @showAdminCardBio="showAdminCardBio" :showCardAdmin="showCardAdmin" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Header from "./components/index/Header-App.vue";
-import Main from "./components/index/Main-App.vue"
-import PreMain from "./components/index/PreMain-App.vue"
-import Footer from "./components/index/Footer-App.vue";
-import AdminCard from "./components/AdminCard.vue"
-
-export default {
-  name: "App",
-  components: {
-    AdminCard,
-    Header,
-    Main,
-    PreMain,
-    Footer
-  },
-  data() {
-    return {
-      showCardAdmin: false
-    };
-  },
-  methods: {
-    showAdminCardBio() {
-      this.showCardAdmin = !this.showCardAdmin;
-    }
-  },
-};
+  export default {
+    name: "App",
+  };
 </script>
 
 <style lang="scss">

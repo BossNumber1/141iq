@@ -19,7 +19,8 @@
     "stream-browserify": "^3.0.0",
     "util": "^0.12.4",
     "vue": "^2.6.14",
-    "vue-google-login": "^2.0.5"
+    "vue-google-login": "^2.0.5",
+    "vue-router": "3.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

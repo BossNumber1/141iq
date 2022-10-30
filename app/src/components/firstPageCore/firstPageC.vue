@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Header />
-    <PreMain />
+    <TemplatePage />
     <Main />
     <AdminCard v-if="showCardAdmin" :showCardAdmin="showCardAdmin" />
     <Footer @showAdminCardBio="showAdminCardBio" :showCardAdmin="showCardAdmin" />
@@ -9,19 +8,17 @@
 </template>
 
 <script>
-  import Header from "../index/Header-App.vue"
+  import TemplatePage from "../common/templatePage"
   import Main from "../index/Main-App.vue"
-  import PreMain from "../index/PreMain-App.vue"
   import Footer from "../index/Footer-App.vue"
   import AdminCard from "../AdminCard.vue"
 
   export default {
     name: "firstPageC",
     components: {
+      TemplatePage,
       AdminCard,
-      Header,
       Main,
-      PreMain,
       Footer
     },
     data() {

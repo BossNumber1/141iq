@@ -64,7 +64,7 @@
 <script>
 export default {
   name: "Src-Main",
-  props: ['dbForUserOrig', 'db'],
+  props: ['dbForCopy', 'db'],
   data() {
     return {
       showFirstPartCode: false,
@@ -73,7 +73,6 @@ export default {
       copiedFirstSrc: false,
       copiedSecondSrc: false,
       copiedThirdSrc: false,
-      dbForUser: this.dbForUserOrig,
       src: this.db,
       howLongWasCodeTemplateShown: 0,
       howLongWasCodeScriptsShown: 0,
@@ -154,7 +153,7 @@ export default {
         this.copiedFirstSrc = true;
 
         // сохраняем в буфер
-        navigator.clipboard.writeText(this.dbForUser[0].src);
+        navigator.clipboard.writeText(this.dbForCopy[0].src);
 
         // добавляем счёт, чтобы не дублировать замену кода
         this.howLongWasCodeTemplateShown = 0;
@@ -162,7 +161,7 @@ export default {
         this.copiedSecondSrc = true;
 
         // сохраняем в буфер
-        navigator.clipboard.writeText(this.dbForUser[1].src);
+        navigator.clipboard.writeText(this.dbForCopy[1].src);
 
         // добавляем счёт, чтобы не дублировать замену кода
         this.howLongWasCodeScriptsShown = 0;
@@ -170,7 +169,7 @@ export default {
         this.copiedThirdSrc = true;
 
         // сохраняем в буфер
-        navigator.clipboard.writeText(this.dbForUser[2].src);
+        navigator.clipboard.writeText(this.dbForCopy[2].src);
 
         // добавляем счёт, чтобы не дублировать замену кода
         this.howLongWasCodeStylesShown = 0;

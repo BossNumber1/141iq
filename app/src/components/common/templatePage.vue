@@ -2,7 +2,7 @@
   <div>
     <Header />
     <PreMain />
-    <Main />
+    <Main :db="db" :dbForCopy="dbForCopy" />
     <AdminCard v-if="showCardAdmin" :showCardAdmin="showCardAdmin" />
     <Footer @showAdminCardBio="showAdminCardBio" :showCardAdmin="showCardAdmin" />
   </div>
@@ -17,6 +17,7 @@
 
   export default {
     name: "templatePage",
+    props: ['db', 'dbForCopy'],
     components: {
       Header,
       PreMain,
